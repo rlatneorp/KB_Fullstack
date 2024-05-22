@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex 정렬</title>
+    <style>
+      body {
+        width: 500px;
+        margin: 10px auto;
+      }
+      #middle {
+        /* display를 flex로 설정하면 자동으로 수평정렬된다 */
+        display: flex;
+      }
+      #top {
+        background-color: green;
+      }
+
+      #left {
+        width: 150px;
+        background-color: red;
+      }
+      #right {
+        width: 350px;
+        background-color: blue;
+      }
+      #bottom {
+        background-color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
+      eligendi est! Inventore quia et fugit facilis cum nesciunt maxime vero
+      natus blanditiis voluptate quod rem, quidem voluptates autem quasi magnam?
+    </div>
+    <div id="middle">
+      <div id="left">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+      <div id="right">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias illum
+        dolores natus sint laboriosam maxime vero voluptatem quia praesentium
+        aspernatur. Quia quod illum velit! Ad in modi adipisci eos fugiat.
+      </div>
+    </div>
+    <div id="bottom">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde voluptatibus
+      earum odit perferendis, fugit, doloremque sint quis temporibus eaque ea
+      sunt voluptas architecto iusto facilis veniam nesciunt dolorum autem
+      aspernatur?
+    </div>
+  </body>
+</html>

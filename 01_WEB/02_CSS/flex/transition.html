@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        /* transition: 속성명 지속시간 타이밍함수 대기시간; 순으로 넣을 수 있다 */
+        /* width는 0.5초 배경은 2초 */
+        /* transition: width 0.5s, background-color 2s; */
+        /* 1초 이따가 0.5만에 바뀐다 */
+        transition: 1s 0.5s;
+      }
+
+      div:hover {
+        width: 300px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

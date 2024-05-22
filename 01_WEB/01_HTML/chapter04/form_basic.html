@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form기본</title>
+  </head>
+  <body>
+    <form>
+      <table>
+        <tr>
+          <!-- for : 매칭시킬 input의 id와 동일해야 같이 동작함 -->
+          <td><label for="username">이름</label></td>
+          <!-- name : 서버에 넘겨주기 위한 키값(www.naver.com/username="최유라") -->
+          <td><input name="username" type="text" id="username" /></td>
+        </tr>
+        <tr>
+          <td>성별</td>
+          <td>
+            <input id="man" type="radio" name="gender" valume="m" />
+            <label for="man">남자</label>
+            <input id="woman" type="radio" name="gender" value="w" />
+            <label for="woman">여자</label>
+          </td>
+        </tr>
+      </table>
+      <input type="submit" value="가입" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>order</title>
+    <style>
+      .flex-container {
+        background-color: DodgerBlue;
+        display: flex;
+        width: 800px;
+        height: 200px;
+      }
+      .flex-item {
+        background-color: ghostwhite;
+        width: 100px;
+        height: 100px;
+        border: 3px solid red;
+        text-align: center;
+        font-size: 30px;
+      }
+      /* order:요소의 순서, 숫자가 클수록 뒤로 간다(자식) */
+      .flex-item:nth-child(1) {
+        order: 17;
+      }
+      .flex-item:nth-child(3) {
+        order: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">5</div>
+    </div>
+  </body>
+</html>

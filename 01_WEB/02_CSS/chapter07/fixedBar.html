@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed로 고정된 바 만들기</title>
+    <style>
+      .container {
+        /* 글자가 가려지지 않기 위해서 여백 넣어주기 */
+        margin-top: 50%px;
+        margin-left: 50px;
+      }
+      .top_bar {
+        height: 50px;
+        background-color: red;
+        /* fixed를 넣어주면 해당 위치에 고정. 뷰포트 기준으로 고정 */
+        position: fixed;
+        /* left right를 둘 다 0으로 주면 양쪽으로 꽉 채우겠다는 뜻 */
+        left: 0;
+        right: 0;
+        /* top에 붙이겠다 */
+        top: 0;
+      }
+      .left_bar {
+        width: 50px;
+        background-color: blue;
+        position: fixed;
+        left: 0;
+        /* 위에서 50px 떨어트려서 겹치지 않게 */
+        top: 50px;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top_bar"></div>
+    <div class="left_bar"></div>
+    <div class="container">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+        repellendus ipsum dignissimos in esse a natus vel tenetur. Error iusto
+        quam officia. Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Suscipit repellendus
+        ipsum dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+        repellendus ipsum dignissimos in esse a natus vel tenetur. Error iusto
+        quam officia. Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Suscipit repellendus
+        ipsum dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+        repellendus ipsum dignissimos in esse a natus vel tenetur. Error iusto
+        quam officia. Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Suscipit repellendus
+        ipsum dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+        repellendus ipsum dignissimos in esse a natus vel tenetur. Error iusto
+        quam officia. Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Suscipit repellendus
+        ipsum dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+        repellendus ipsum dignissimos in esse a natus vel tenetur. Error iusto
+        quam officia. Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Suscipit repellendus
+        ipsum dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+        repellendus ipsum dignissimos in esse a natus vel tenetur. Error iusto
+        quam officia. Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Suscipit repellendus
+        ipsum dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+        repellendus ipsum dignissimos in esse a natus vel tenetur. Error iusto
+        quam officia. Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Suscipit repellendus
+        ipsum dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor. Lorem ipsum dolor
+        sit amet, consectetur adipisicing elit. Suscipit repellendus ipsum
+        dignissimos in esse a natus vel tenetur. Error iusto quam officia.
+        Dolorem eaque dicta quos suscipit maxime iste dolor.
+      </p>
+    </div>
+  </body>
+</html>

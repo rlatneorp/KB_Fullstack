@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Script 실행 순서에 따른 오류</title>
+    <!-- Script 태그가 위에 있기 때문에 html 요소를 찾지 못한다 -->
+    <script>
+      // h1 태그의 배경 색상 변경
+      document.querySelector('h1').style.backgroundColor = 'red';
+      // h1 태그의 글자 색상 변경
+      document.querySelector('h2').style.color = 'red';
+    </script>
+  </head>
+  <body>
+    <h1>Process - 1</h1>
+    <h2>Process - 2</h2>
+  </body>
+</html>

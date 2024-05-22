@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no,width=device-width, initial-scale=1.0,maximum-scale=1"
+    />
+    <title>너비에 따른 미디어 쿼리 설정</title>
+    <style>
+      /* 스마트폰 */
+      /* 스크린이면서 너비가 767px까지일 때  */
+      @media screen and (max-width: 767px) {
+        body {
+          background-color: red;
+        }
+      }
+      /* 태블릿pc */
+      /* 스크린이면서 너비가 768px에서 959px까지일 때  */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        body {
+          background-color: green;
+        }
+      }
+      /* 데스크톱 */
+      /* 스크린이면서 너비가 960px이상일 때  */
+      @media screen and (min-width: 960px) {
+        body {
+          background-color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
+      rerum! Dolor eos nemo maiores totam ad modi ut fugit illum cum possimus
+      repellendus quidem dolore officiis tempore, ullam est nobis. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Blanditiis, rerum! Dolor eos
+      nemo maiores totam ad modi ut fugit illum cum possimus repellendus quidem
+      dolore officiis tempore, ullam est nobis. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Blanditiis, rerum! Dolor eos nemo maiores
+      totam ad modi ut fugit illum cum possimus repellendus quidem dolore
+      officiis tempore, ullam est nobis.
+    </p>
+  </body>
+</html>

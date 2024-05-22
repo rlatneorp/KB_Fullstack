@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="maximum-scale=1,user-scalable=no, width=device-width, initial-scale=1.0"
+    />
+    <title>방향에 따른 미디어 쿼리 설정</title>
+    <style>
+      /* 스크린이면서 방향이 세로일 때 */
+      @media screen and (orientation: portrait) {
+        body {
+          background-color: red;
+        }
+      }
+      /* 스크린이면서 방향이 가로일 때 */
+      @media screen and (orientation: landscape) {
+        body {
+          background-color: green;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
+      rerum! Dolor eos nemo maiores totam ad modi ut fugit illum cum possimus
+      repellendus quidem dolore officiis tempore, ullam est nobis. Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Blanditiis, rerum! Dolor eos
+      nemo maiores totam ad modi ut fugit illum cum possimus repellendus quidem
+      dolore officiis tempore, ullam est nobis. Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Blanditiis, rerum! Dolor eos nemo maiores
+      totam ad modi ut fugit illum cum possimus repellendus quidem dolore
+      officiis tempore, ullam est nobis.
+    </p>
+  </body>
+</html>

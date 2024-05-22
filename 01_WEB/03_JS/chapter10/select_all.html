@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>querySelectorAll 사용하기</title>
+    <script>
+      // 이벤트 연결
+      window.onload = function () {
+        // 문서 객체 선택
+        // querySelectorAll는 선택자에 해당하는 요소 모두 가져온다
+        let headers = document.querySelectorAll('h1');
+
+        for (let i = 0; i < headers.length; i++) {
+          // 변수를 선언해서 headers 안에 있는 요소를 하나씩 꺼내온다.
+          let header = headers[i];
+          // 객체조작
+          header.style.color = 'orange';
+          header.style.backgroundColor = 'red';
+          header.innerHTML = 'From JavaScript';
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+  </body>
+</html>

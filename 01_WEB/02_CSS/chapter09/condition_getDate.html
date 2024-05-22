@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date 객체 선언 및 요소 추출</title>
+  </head>
+  <body></body>
+  <script>
+    // Date 객체선언
+    let date = new Date();
+    // let date2 = new Date();
+
+    //요소 추출
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDay();
+    let hours = date.getHours();
+    let min = date.getMinutes();
+    let sec = date.getSeconds();
+
+    console.log(year, month, day, hours, min, sec);
+  </script>
+</html>

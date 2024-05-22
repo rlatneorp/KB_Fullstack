@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex-flow</title>
+    <style>
+      .flex-container {
+        background-color: DodgerBlue;
+        display: flex;
+        width: 250px;
+        height: 200px;
+        /* flex-flow: flex-direction + flex-wrap; */
+        flex-flow: row wrap;
+      }
+      .flex-item {
+        background-color: ghostwhite;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        text-align: center;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+      <div class="flex-item">4</div>
+      <div class="flex-item">5</div>
+    </div>
+  </body>
+</html>
