@@ -20,6 +20,9 @@
         data() {
           return { num: 0 };
         },
+        // methods는 함수로 만들어준 후 매번 호출해야 한다
+        // 호출할 때도 괄호를 붙여줘야 한다
+        // 캐싱이 아니라 바로 부름
         methods: {
           sum() {
             console.log('## num: ' + this.num);
