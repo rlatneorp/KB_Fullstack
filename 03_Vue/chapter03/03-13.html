@@ -8,7 +8,9 @@
   <body>
     <div id="app">
       <select id="regions">
+        <!-- 첫번째 항목은 선택 불간으하게 설정해둠 -->
         <option disabled="disabled" selected>지역 선택</option>
+        <!-- 객체의 키와 데이터값을 꺼내서 각각을 필요한 위치에 지정 -->
         <option v-for="(val, key) in regions" :value="key" :key="key">
           {{val}}
         </option>
