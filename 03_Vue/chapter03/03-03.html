@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- v-bind를 이용해서 HTML 속성을 뷰 데이터와 바인딩 시켜준다 -->
+      <!-- v-bind: 은 :으로 축약이 가능하다 -->
+      <!-- v-bind는 속성값이 ui를 변경하는건 가능하지만 반대는 불가능하다(단방향 데이터 바인딩) -->
+      <input type="text" v-bind:value="message" />
+      <br />
+      <img v-bind:src="imagePath" />
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            message: 'v-bind 디렉티브',
+            imagePath: 'https://contactsvc.bmaster.kro.kr/photos/18.jpg',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

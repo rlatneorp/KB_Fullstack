@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- #app부분이 가상DOM -->
+    <div id="app">
+      <!-- message에는 data함수에서 리턴하는 객체의 속성이 들어감 -->
+      <!-- {{model}}은 안된다 -->
+      <h2>{{message}}</h2>
+    </div>
+    <!-- CDN -->
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let model = { message: 'Hello Vue3!' };
+      // 설정 객체
+      // createApp : vue에서 앱을 생성할 때 사용되는 메서드
+      let vm = Vue.createApp({
+        name: 'App',
+        // ES6메서드 정의
+        // data는 proxy객체 (한 번 포장 한 객체)
+        data() {
+          return model;
+        },
+        // 가상 DOM을 지정함
+      }).mount('#app'); // id가 app인 요소와 연결해줌
+    </script>
+  </body>
+</html>
