@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- amount: 데이터와 양방향 바인딩해서 초기화시킴 -->
+      금액: <input type="text" v-model.number="amount" /> <br />
+      <!-- v:on을 @로 단축 -->
+      <!-- 입금버튼 클릭시 deposit함수 연결 -->
+      <button @click="deposit">입금</button>
+      <!-- 인출버튼 클릭시 withdraw 함수 연결 -->
+      <button @click="withdraw">인출</button>
+      <br />
+      <h3>계좌 잔고: [{{balance}}]</h3>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            // amount : 실제 입력 값 , balance : 잔고
+            amount: 0,
+            balance: 0,
+          };
+        },
+        methods: {
+          deposit() {
+            let amt = parseInt(this.amount);
+            // 입금 금액이 0 이하인 경우 에러메세지 출력
+            if (amt <= 0) {
+              alert('0보다 큰 값을 입금하세요');
+              // 여기서 this는 vm을 의미함으로 data안에 있는 balance
+            } else {
+              this.balance += amt;
+            }
+          },
+          withdraw() {
+            let amt = parseInt(this.amount);
+            // 인출 금액이 0이하인 경우 에러 메시지 출력
+            if (amt <= 0) {
+              alert('0보다 큰 값을 인출하세요');
+              // 인출 금액이 잔고보다 많은 경우 에러 메세지 출력
+            } else if (amt > this.balance) {
+              alert('잔고보다 많은 금액을 인출할 수 없습니다.');
+            } else {
+              this.balance -= amt;
+            }
+          },
+        },
+        // 아이디가 app인 요소와 연결해줌
+      }).mount('#app');
+    </script>
+  </body>
+</html>
