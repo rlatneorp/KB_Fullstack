@@ -25,6 +25,8 @@
   </head>
   <body>
     <div id="app">
+      <!-- .stop으로 해당 이벤트에 stopPropagathion()호출 -->
+      <!-- 해당 요소를 클릭시 버블링 현상이 발생하지 않음 -->
       <div id="outer" @click.stop="outerClick">
         <div id="inner" @click.stop="innerClick"></div>
       </div>
