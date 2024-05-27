@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- amount: 데이터와 양방향 바인딩해서 초기화시킴 -->
+      금액: <input type="text" v-model.number="amount" /> <br />
+      <!-- 입금버튼 클릭시 balace값에 amout값을 int로 변경하여 더해준다 -->
+      <button v-on:click="balance += parseInt(amount)">입금</button>
+      <!-- 인출버튼 클릭시 balace값에 amout값을 int로 변경하여 빼준다 -->
+      <button v-on:click="balance -= parseInt(amount)">인출</button>
+      <br />
+      <h3>계좌 잔고: [{{balance}}]</h3>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            // amount : 실제 입력 값 , balance : 잔고
+            amount: 0,
+            balance: 0,
+          };
+        },
+        // 아이디가 app인 요소와 연결해줌
+      }).mount('#app');
+    </script>
+  </body>
+</html>
