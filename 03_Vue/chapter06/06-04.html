@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- []안엔 객체의 이름 -->
+      <!-- 객체를 두개 이상 연결해줘야 할 경우 객체 배열로 연결해줌 -->
+      <button :style="[myColor, myLayout]">테스트</button>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            myColor: {
+              backgroundColor: 'purple',
+              color: 'yellow',
+            },
+            myLayout: {
+              width: '150px',
+              height: '80px',
+              textAlign: 'center',
+            },
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
