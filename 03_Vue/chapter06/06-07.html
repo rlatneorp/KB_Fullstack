@@ -20,10 +20,15 @@
   </head>
   <body>
     <div id="app">
-      <!-- :이 붙어있지 않은 class는 이름 그대로 클래스 추가  -->
-      <!-- :이 붙어있는 class는 해당 이름의 데이터를 data()내에서 찾아야한다 -->
-      <!-- 스타일 3개 다 추가됨 -->
-      <button class="staticBorder" :class="myColor">테스트</button>
+      <input type="checkbox" v-model="isMyLayout" />
+      레이아웃 적용 여부<br />
+      <!-- myColor 클래스는 실수로 바인딩해주지만, myLayout 클래스는 isMyLayout의 값에 따라 추가한다 -->
+      <button
+        class="staticBorder"
+        :class="[myColor, isMyLayout ? myLayout: '']"
+      >
+        버튼
+      </button>
     </div>
     <script src="https://unpkg.com/vue"></script>
     <script>
@@ -31,7 +36,9 @@
         name: 'App',
         data() {
           return {
-            myColor: 'buttonColor buttonLayout',
+            myColor: 'buttonColor',
+            myLayout: 'buttonLayout',
+            isMyLayout: false,
           };
         },
       }).mount('#app');
