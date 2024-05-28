@@ -1,5 +1,6 @@
 <template>
   <!-- idol안에 있는 속성들을 따로 받아왔기 때문에 해당 속성 이름으로 변경 -->
+  <!-- :checked는 props가 아니라 실제 checkbox안에 있는 html 속성(체크 여부) -->
   <li><input type="checkbox" :checked="checked" />{{ id }} - {{ name }}</li>
 </template>
 
