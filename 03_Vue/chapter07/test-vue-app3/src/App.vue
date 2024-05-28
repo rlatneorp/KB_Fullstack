@@ -4,13 +4,8 @@
     <hr />
     <ul>
       <!-- name과 checked는 자식한테 props로 전달해주는 속성 (사용자 정의) -->
-      <!-- idols 배열을 돌면서 idol이라는 이름으로 객체 하나씩 접근 -->
-      <CheckboxItem
-        v-for="idol in idols"
-        :key="idol.id"
-        :name="idol.name"
-        :checked="idol.checked"
-      />
+      <!-- idol은 idols라는 이름으로 객체 하나씩 접근 -->
+      <CheckboxItem v-for="idol in idols" :key="idol.id" :idol="idol" />
     </ul>
   </div>
 </template>

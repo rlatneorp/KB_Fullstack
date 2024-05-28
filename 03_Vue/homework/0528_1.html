@@ -21,15 +21,30 @@
       let vm = Vue.createApp({
         name: 'App',
         data() {
-
-                    return {
-                      earth: []
-
-                      },
-        }
-
-
-
+          stars: [
+            {
+              id: 1,
+              name: '지구',
+              g: '5.972 × 10^24 kg',
+              size: '6.371km',
+              et: '생명체가 존재하는 유일한 행성',
+            },
+            {
+              id: 2,
+              name: '목성',
+              g: '1.898 × 10^27 kg',
+              size: '69,911 km',
+              et: '태양계에서 가장 큰 행성',
+            },
+            {
+              id: 3,
+              name: '화성',
+              g: '6.39 × 10^23 kg',
+              size: '3,389.5 km',
+              et: '빨간색 표면이 특징',
+            },
+          ];
+        },
       }).mount('#app');
     </script>
   </body>
