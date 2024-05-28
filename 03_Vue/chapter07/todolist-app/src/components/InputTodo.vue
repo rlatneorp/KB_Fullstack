@@ -1,4 +1,4 @@
-<template>InputTodo</template>
+<template><div>InputTodo</div></template>
 
 <script>
 export default {
