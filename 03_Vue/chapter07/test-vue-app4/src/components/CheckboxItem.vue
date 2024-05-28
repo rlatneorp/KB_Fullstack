@@ -1,5 +1,5 @@
 <template>
-  <!-- idol을 객체로 받아왔으므로 idol안쪽의 속성에 .으로 접근 -->
+  <!-- idol안에 있는 속성들을 따로 받아왔기 때문에 해당 속성 이름으로 변경 -->
   <li><input type="checkbox" :checked="checked" />{{ id }} - {{ name }}</li>
 </template>
 
@@ -7,14 +7,14 @@
 export default {
   name: 'CheckboxItem',
   // props: 부모 컴포넌트(App.vue)한테 받아온 속성
-  // 받아올 속성이 많은 경우 객체를 통째로 넘겨준다.
+  // props를 객체로 받아오는 경우 세부 옵션까지 설정 가능
   props: {
-    id: [Number, String],
+    id: [Number, String], // Number나 String 타입이다
     name: String,
     checked: {
       type: Boolean,
-      require: false,
-      default: false,
+      require: false, // 필수 속성이 아니다 = 옵션이다
+      default: false, // 생략하면 기본값이 false가 된다
     },
   },
 };

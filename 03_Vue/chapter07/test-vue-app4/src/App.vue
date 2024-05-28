@@ -27,6 +27,7 @@ export default {
   data() {
     return {
       // idols를 객체 배열로 만들어줌
+      // props 부분에서 checked의 기본값을 false로 정해줬기 때문에 생략 가능
       idols: [
         { id: 1, name: 'BTS', checked: true },
         { id: 2, name: 'Black Pink' },
