@@ -12,6 +12,7 @@ export default {
   },
 };
 </script>
+<!-- modile을 붙이면 style을 객체처럼 사용 가능 -->
 <style module>
 .child {
   background-color: orange;
