@@ -10,7 +10,7 @@ export default {
 </script>
 <style>
 .child {
-  background-color: yellow;
+  background-color: orange;
   border: solid 1px black;
   margin: 1.5em;
   padding: 1em;
