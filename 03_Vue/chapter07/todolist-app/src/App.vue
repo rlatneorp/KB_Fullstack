@@ -16,7 +16,7 @@
 import TodoList from './components/TodoList.vue';
 import InputTodo from './components/InputTodo.vue';
 
-let ts = new Data().getTime();
+let ts = new Date().getTime();
 export default {
   name: 'App',
   // components는 import와 짝궁! 컴포넌트로 등록해줘야 함
