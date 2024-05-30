@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- 체크박스 변경시 id값과 현재 체크박스의 체크상태값을 check-changed이벤트에 담아서
-      부모로 보냄 -->
+    <!-- item이라는 이름의 slot을 받아옴 -->
+    <slot name="item"></slot>
     <input
       type="checkbox"
       :value="id"
