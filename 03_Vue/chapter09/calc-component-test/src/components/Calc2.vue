@@ -12,7 +12,7 @@
 import { ref } from 'vue'; // ref : 반응형 데이터
 
 export default {
-  name: 'Calc',
+  name: 'Calc2',
   setup() {
     // ref로 값형 데이터를 감싸줘야 반응형으로 동작한다
     // 기존 옵션 API의 data와 같은 역할
