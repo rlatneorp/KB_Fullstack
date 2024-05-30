@@ -4,7 +4,7 @@
     <slot name="icon" :checked="item.checked">
       <!-- 부모의 check-change이벤트에 현재 체크박스 체크 여부 전송 -->
       <input
-        type="chekbox"
+        type="checkbox"
         :value="item.id"
         :checked="item.checked"
         @change="
