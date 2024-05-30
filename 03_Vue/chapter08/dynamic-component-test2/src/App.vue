@@ -1,8 +1,9 @@
 <template>
   <div>
+    <!-- 자식의 name을 searchName으로 전달하고 다시 자식의 변경값을 받아옴 -->
     <!-- 주고받고 하는 과정을 아래코드로 생략가능 -->
     <InputName v-model:name="searchName" />
-    <h2>검색어 : {{ searchName }}</h2>
+    <h3>검색어 : {{ searchName }}</h3>
   </div>
 </template>
 <script>
