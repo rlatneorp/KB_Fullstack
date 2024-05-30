@@ -19,7 +19,7 @@ export default {
     const x = ref(10);
     const y = ref(20);
     const result = ref(30);
-
+    // ref 데이터 내의 값에 접근할 때는 무조건 .value을 붙여야 한다
     const calcAdd = () => {
       result.value = x.value + y.value;
     };
