@@ -25,6 +25,10 @@ const router = createRouter({
       path: '/members',
       component: Members,
     },
+    {
+      path: '/videos',
+      component: Videos,
+    },
   ],
 });
 
