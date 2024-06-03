@@ -4,6 +4,7 @@ import Home from '@/pages/Home.vue';
 import About from '@/pages/About.vue';
 import Members from '@/pages/Members.vue';
 import Videos from '@/pages/Videos.vue';
+import NotFound from '@/pages/NotFound.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -29,6 +30,9 @@ const router = createRouter({
       path: '/videos',
       component: Videos,
     },
+    // 어떤 문자던지 위에서 해당되지 않는 경로는 다 여기서 처리
+    // 404 라우트
+    { path: '/:paths(.*)*', name: 'NotFound', component: NotFound },
   ],
 });
 

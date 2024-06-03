@@ -24,6 +24,7 @@
 </template>
 <script>
 import { reactive, computed } from 'vue';
+
 export default {
   setup() {
     const state = reactive({ isNavShow: false });
