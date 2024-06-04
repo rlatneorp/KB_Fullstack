@@ -1,11 +1,11 @@
 <template>
   <div class="card card-body">
-    <h1>Videos</h1>
+    <h1>About</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Videos',
+  name: 'About',
 };
 </script>
