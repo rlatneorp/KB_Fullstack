@@ -14,6 +14,7 @@
       {{ todoItem.todo }}
       {{ todoItem.done ? '(완료)' : '' }}
     </span>
+    <!-- 클릭하면 해당 아이디의 todo를 편집할 수 있는 화면으로 이동 -->
     <span
       class="float-end badge bg-secondary pointer m-1"
       @click="router.push(`/todos/edit/${todoItem.id}`)"
@@ -32,6 +33,9 @@
 import { useRouter } from 'vue-router';
 import { inject } from 'vue';
 
+// props랑 동일한 개념, script setup 문법에서 사용
+// todolist 로부터 받아왔다
+// 타입이 객체고,필수값
 defineProps({
   todoItem: { Type: Object, required: true },
 });

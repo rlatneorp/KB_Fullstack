@@ -1,6 +1,7 @@
 <template>
   <div class="row">
     <div class="col p-3">
+      <!-- 링크클릭시 할일 목록으로 이동 -->
       <router-link class="btn btn-primary" to="/todos/add">
         할일 추가
       </router-link>
@@ -23,6 +24,6 @@
 <script setup>
 import { inject } from 'vue';
 import TodoItem from '@/components/TodoItem.vue';
-
+// app.vue가 provide의 todolist를 inject로 받아옴
 const todoList = inject('todoList');
 </script>
