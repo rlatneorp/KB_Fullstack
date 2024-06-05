@@ -31,7 +31,6 @@ const fetchTodoList = async () => {
   // try catch 문 예외 처리 구문
   // try : 예외가 발생할 수 있는 문장을 넣는다
   try {
-    states.isLoading = false;
     // 서버에서 데이터를 가져올때 시간이 걸리기 때문에 await 비동기처리
     const response = await axios.get(BASEURI);
     if (response.status === 200) {
@@ -44,13 +43,13 @@ const fetchTodoList = async () => {
   } catch (error) {
     alert('에러발생 :' + error);
   }
+  states.isLoading = false;
 };
 
 // todo를 추가하는 메소드, todo와 desc가 들어있는 객체를 구조 분해 할당으로 받음
 const addTodo = async ({ todo, desc }, successCallback) => {
   states.isLoading = true;
   try {
-    states.isLoading = false;
     const payload = { todo, desc };
     const response = await axios.post(BASEURI, payload);
     if (response.status === 201) {
@@ -62,6 +61,8 @@ const addTodo = async ({ todo, desc }, successCallback) => {
   } catch (error) {
     alert('에러발생 :' + error);
   }
+  states.isLoading = false;
+
   // todoList의 맨 뒤에 새로운 객체 추가
   // states.todoList.push({ id: new Date().getTime(), todo, desc, done: false });
 };
@@ -70,7 +71,6 @@ const addTodo = async ({ todo, desc }, successCallback) => {
 const updateTodo = async ({ id, todo, desc, done }, successCallback) => {
   states.isLoading = true;
   try {
-    states.isLoading = false;
     const payload = { id, todo, desc, done };
     // 해당 아이디를 가진 할일 전체를 업데이트 해줌
     const response = await axios.put(BASEURI + `/${id}`, payload);
@@ -85,6 +85,7 @@ const updateTodo = async ({ id, todo, desc, done }, successCallback) => {
   } catch (error) {
     alert('에러 발생 :' + error);
   }
+  states.isLoading = false;
 };
 
 // todo를 수정하는 메소드, 해당 id의 todo를 찾아서 todo, desc, done 값을 업데이트
@@ -99,7 +100,6 @@ const updateTodo = async ({ id, todo, desc, done }, successCallback) => {
 const deleteTodo = async (id) => {
   states.isLoading = true;
   try {
-    states.isLoading = false;
     const response = await axios.delete(BASEURI + `/${id}`);
     console.log(response.status, response.data);
     if (response.status === 200) {
@@ -111,6 +111,7 @@ const deleteTodo = async (id) => {
   } catch (error) {
     alert('에러 발생 :' + error);
   }
+  states.isLoading = false;
 };
 // todo를 삭제하는 메소드, 해당 id의 todo를 찾아서 삭제
 // const deleteTodo = (id) => {
@@ -123,7 +124,6 @@ const deleteTodo = async (id) => {
 const toggleDone = async (id) => {
   states.isLoading = true;
   try {
-    states.isLoading = false;
     // 받아온 id로 해당하는 todo를 찾아옴
     let todo = states.todoList.find((todo) => todo.id === id);
     // todo의 아이디를 그대로 가져오고 done값만 반대로 변경해줌
@@ -138,6 +138,7 @@ const toggleDone = async (id) => {
   } catch (error) {
     alert('에러 발생 :' + error);
   }
+  states.isLoading = false;
 };
 
 // todo의 done을 true -> false, false -> true로 변경해주는 메소드
