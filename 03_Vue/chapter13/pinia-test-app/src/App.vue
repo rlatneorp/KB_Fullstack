@@ -9,9 +9,12 @@
     <ul>
       <li v-for="todoItem in todoList">
         <span style="cursor: pointer" @click="toggleDone(todoItem.id)">
+          <!-- 할 일의 내용을 표시하고 할일이 완료된 경우 '(완료)' 표시 -->
           {{ todoItem.todo }} {{ todoItem.done ? '(완료)' : '' }}
         </span>
+        <!-- 스페이스 3칸 추가 -->
         &nbsp;&nbsp;&nbsp;
+        <!-- 클릭시 해당 아이디를 가진 할 일이 삭제됨 -->
         <button @click="deleteTodo(todoItem.id)">삭제</button>
       </li>
     </ul>
