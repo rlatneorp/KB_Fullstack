@@ -1,33 +1,28 @@
 {
   "todos": [
     {
-      "id": "1",
-      "todo": "ES6학습",
-      "desc": "설명12",
-      "done": false
-    },
-    {
-      "id": "3",
-      "todo": "ContextAPI 학습",
-      "desc": "설명3",
-      "done": false
-    },
-    {
       "id": "4",
       "todo": "야구경기 관람",
       "desc": "설명4",
-      "done": false
+      "done": true
     },
     {
       "id": "fe35",
       "todo": "집에가기",
       "desc": "스터디..",
-      "done": false
+      "done": true
     },
     {
       "id": "8c62",
       "todo": "코딩 공부하기",
-      "desc": ""
+      "desc": "",
+      "done": true
+    },
+    {
+      "id": "c5de",
+      "todo": "집가기",
+      "desc": "집에가자..",
+      "done": true
     }
   ]
 }
