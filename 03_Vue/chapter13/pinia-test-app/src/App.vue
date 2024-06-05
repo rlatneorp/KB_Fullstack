@@ -18,6 +18,7 @@
         <button @click="deleteTodo(todoItem.id)">삭제</button>
       </li>
     </ul>
+    <!-- 스토어의 doneCount에 접근해서 계산된 속성으로 만들어줌 -->
     <div>완료된 할일 수 : {{ doneCount }}</div>
   </div>
 </template>

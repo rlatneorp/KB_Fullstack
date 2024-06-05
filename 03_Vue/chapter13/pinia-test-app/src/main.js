@@ -1,5 +1,3 @@
-import './assets/main.css';
-
 import { createApp } from 'vue';
 // pinia 모듈에서 createPinia 함수 가져오기
 import { createPinia } from 'pinia';
