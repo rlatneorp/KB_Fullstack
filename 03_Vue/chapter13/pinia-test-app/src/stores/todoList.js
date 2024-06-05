@@ -30,6 +30,6 @@ export const useTodoListStore = defineStore('todoList', () => {
   });
 
   const todoList = computed(() => state.todoList);
-
+  // 마지막에 사용할 데이터를 전부 객체로 리턴
   return { todoList, doneCount, addTodo, deleteTodo, toggleDone };
 });

@@ -1,47 +1,42 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <h2>TodoList 테스트(Composition API)</h2>
+    <hr />
+    할일 추가 :
+    <input type="text" v-model="todo" />
+    <button @click="addTodoHandler">추가</button>
+    <hr />
+    <ul>
+      <li v-for="todoItem in todoList">
+        <span style="cursor: pointer" @click="toggleDone(todoItem.id)">
+          {{ todoItem.todo }} {{ todoItem.done ? '(완료)' : '' }}
+        </span>
+        &nbsp;&nbsp;&nbsp;
+        <button @click="deleteTodo(todoItem.id)">삭제</button>
+      </li>
+    </ul>
+    <div>완료된 할일 수 : {{ doneCount }}</div>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup>
+import { useTodoListStore } from '@/stores/todoList.js';
+import { ref, computed } from 'vue';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+// 값형 데이터이기 때문에 ref로 반응형 추가
+const todo = ref('');
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+const todoListStore = useTodoListStore();
+// 분해할당으로 스토어 내에서 리턴한 데이터들 가져옴
+const { todoList, addTodo, deleteTodo, toggleDone } = todoListStore;
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+// 분해할당으로 받아두지 않은 값을 스토어명으로 접근해야함
+const doneCount = computed(() => todoListStore.doneCount);
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+const addTodoHandler = () => {
+  // ref 데이터 접근시에는 부모건 value로 접근
+  addTodo(todo.value);
+  // 추가적인 기능이 있을 때는 새로 핸들러를 만들어줌
+  todo.value = '';
+};
+</script>
