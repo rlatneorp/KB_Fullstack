@@ -7,12 +7,6 @@
       "done": false
     },
     {
-      "id": "2",
-      "todo": "React학습",
-      "desc": "설명2",
-      "done": false
-    },
-    {
       "id": "3",
       "todo": "ContextAPI 학습",
       "desc": "설명3",
@@ -29,6 +23,11 @@
       "todo": "집에가기",
       "desc": "스터디..",
       "done": false
+    },
+    {
+      "id": "8c62",
+      "todo": "코딩 공부하기",
+      "desc": ""
     }
   ]
 }
