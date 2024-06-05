@@ -124,8 +124,11 @@ const toggleDone = async (id) => {
   states.isLoading = true;
   try {
     states.isLoading = false;
+    // 받아온 id로 해당하는 todo를 찾아옴
     let todo = states.todoList.find((todo) => todo.id === id);
+    // todo의 아이디를 그대로 가져오고 done값만 반대로 변경해줌
     let payload = { ...todo, done: !todo.done };
+    // done이 변경됐으므로 해당 아이디의 todo를 업데이트 해줌
     const response = await axios.put(BASEURI + `/${id}`, payload);
     if (response.status === 200) {
       todo.done = payload.done;
@@ -159,5 +162,6 @@ provide('actions', {
   fetchTodoList,
 });
 
+// 전체 목록 갱신
 fetchTodoList();
 </script>
