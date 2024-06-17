@@ -1,4 +1,4 @@
-package ch02.se01;
+package ch02.sec01;
 
 public class VariableUseExample{
     public static void main(String[] args) {
@@ -6,7 +6,5 @@ public class VariableUseExample{
         int minute = 5;
         System.out.println(hour + "시간 " + minute + "분" ) ;
 
-
     }
-
 }
