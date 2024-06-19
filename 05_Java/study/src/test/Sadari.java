@@ -1,4 +1,4 @@
-package ch03;
+package test;
 
 public class Sadari {
     public static void main(String[] args) {

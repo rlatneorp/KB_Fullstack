@@ -1,13 +1,13 @@
 package test;
 
-public class Star {
+public class Star2 {
     public static void main(String[] args) {
         String star = "★";
-        String str = "";
-
-        for(int i = 0; i < 5; i++){
-            str += star;
-            System.out.println(str);
+        for(int i = 5; i > 0; i--){
+            for(int j = 0; j < i; j++){
+                System.out.print(star);
+            }
+            System.out.println();
         }
     }
 }
