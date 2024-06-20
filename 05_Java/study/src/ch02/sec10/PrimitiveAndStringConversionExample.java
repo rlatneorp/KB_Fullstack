@@ -3,7 +3,7 @@ package ch02.sec10;
 public class PrimitiveAndStringConversionExample {
     public static void main(String[] args) {
 
-//        String에서 primitive type으로 변환시 "타입.parse타입"의 형태로 변환
+//      String에서 primitive type으로 변환시 "타입.parse타입"의 형태로 변환
         int value1 = Integer.parseInt("10");
         double value2 = Double.parseDouble("3.14");
         boolean value3 = Boolean.parseBoolean("true");
@@ -12,7 +12,7 @@ public class PrimitiveAndStringConversionExample {
         System.out.println("value2: " + value2);
         System.out.println("value3: " + value3);
 
-//        primitive type에서 String으로 변환시 String.valueOf()를 사용
+//      primitive type에서 String으로 변환시 String.valueOf()를 사용
         String str1 = String.valueOf(10);
         String str2 = String.valueOf(3.14);
         String str3 = String.valueOf(true);
