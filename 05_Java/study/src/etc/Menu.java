@@ -1,4 +1,4 @@
-package cli;
+package etc;
 
 public class Menu {
     String menus[] = {"학생수", "점수입력", "점수리스트", "분석", "종료"};

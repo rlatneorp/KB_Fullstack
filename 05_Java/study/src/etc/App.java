@@ -1,6 +1,6 @@
-package cli;
+package etc;
 
-import static cli.Input.scanner;
+import static etc.Input.scanner;
 
 public class App {
     int studentNum = 0;
