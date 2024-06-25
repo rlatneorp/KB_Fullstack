@@ -17,5 +17,10 @@ public class SplitExample {
         for(int i = 0; i < tokens.length; i++){
             System.out.println(tokens[i]);
         }
+
+        // 향상된 for문
+        for(String token : tokens){
+            System.out.println(token);
+        }
     }
 }
