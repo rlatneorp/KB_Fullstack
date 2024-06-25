@@ -1,4 +1,4 @@
-package etc;
+package cliFramework;
 
 import java.util.Scanner;
 
