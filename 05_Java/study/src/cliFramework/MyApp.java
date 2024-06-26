@@ -12,6 +12,7 @@ public class MyApp extends App {
         menu.add(new MenuItem("점수리스트", new PrintScoreCommand()));
         menu.add(new MenuItem("분석", new AnalizeCommand()));
     }
+
     public static void main(final String[] args) {
         App app = new MyApp();
         app.run();
