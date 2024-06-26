@@ -5,9 +5,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Data // @RequiredArgsConstructor, @Getter, @Setter, @EqualsAndHashCode, @ToString 합친 것
+@NoArgsConstructor // 기본 생성자 만들어줌
+@AllArgsConstructor // 모든 필드 포함시키는 생성자 만들어줌
 @Builder
 public class Member {
     private String id;
