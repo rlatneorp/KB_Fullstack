@@ -14,8 +14,10 @@ public class MathExample{
         long v4 = Math.min(3, 7);
         System.out.println("v3=" + v3);
         System.out.println("v4=" + v4);
+
         double value = 12.3456;
         double temp1 = value * 100;
+        // round : 해당 값을 반올림 처리
         long temp2 = Math.round(temp1);
         double v5 = temp2 / 100.0;
         System.out.println("v5=" + v5);
