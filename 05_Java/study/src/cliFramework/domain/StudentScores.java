@@ -6,10 +6,10 @@ public class StudentScores {
 
     // Singleton 패턴
     private StudentScores() { }
-        private static StudentScores instance = new StudentScores();
-        public static StudentScores getInstance() {
-            return instance;
-        }
+    private static StudentScores instance = new StudentScores();
+    public static StudentScores getInstance() {
+        return instance;
+    }
     public int getStudentNum() {
         return studentNum;
     }
