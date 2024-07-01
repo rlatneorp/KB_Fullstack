@@ -1,17 +1,19 @@
-package codingTest.firstSt.one;
+package codingTest.week1.one;
+
+import java.util.Arrays;
 
 class Solution {
     public String solution(String[] participant, String[] completion) {
-        String answer = "";
-        int indexd = 0;
-        for(int i = 0; i < participant.length; i++){
-            for(int j = 0; j < completion.length; j++){
-             if(participant[i].equals(completion[j])){
-                 indexd = participant[i].indexOf(i);
-             }
-                answer = participant.replace(participant[i], indexd);
+       // 정렬 o(nlogn)
+        Arrays.sort(participant);
+        Arrays.sort(completion);
+
+        // i 0~n-1 순회
+        for(int i = 0; i < completion.length; i++){
+            if(!participant[i].equals(completion[i])){
+                return participant[i];
             }
         }
-        return answer;
+        return participant[participant.length-1];
     }
 }

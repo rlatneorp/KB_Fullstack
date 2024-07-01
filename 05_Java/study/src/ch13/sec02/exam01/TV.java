@@ -1,2 +1,4 @@
-package ch13.sec02.exam01;public class TV {
+package ch13.sec02.exam01;
+
+public class TV {
 }
