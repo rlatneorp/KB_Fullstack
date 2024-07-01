@@ -12,6 +12,7 @@ public class HashSetExample {
         set.add("Java");
         set.add("JDBC");
         set.add("Servlet/JSP");
+        // 위 쪽에 자바가 이미 있어서 중복저장 안됨
         set.add("Java");
         set.add("iBATIS");
 
