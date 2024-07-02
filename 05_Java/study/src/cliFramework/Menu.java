@@ -26,6 +26,7 @@ public class Menu {
         System.out.println("--------------------------------------------------------------");
     }
     public Command getSelect() {
+//        사용자가 입력한 숫자를 받아서 selectNo에 저장
         int selectNo = Input.getInt("선택> ");
         // 올바른 범위 인지 체크
 
