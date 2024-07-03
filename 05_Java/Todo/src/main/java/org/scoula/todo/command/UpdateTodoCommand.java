@@ -23,6 +23,7 @@ public class UpdateTodoCommand implements Command {
         System.out.println();
 
         Todo updateTodo = (Todo)todo.clone();
+        // todo에 Cloneable이 implements돼 있어서 clone();를 쓸 수 있다.
         updateTodo.setTitle(title);
         updateTodo.setDescription(description);
         updateTodo.setDone(done);
