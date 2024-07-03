@@ -24,6 +24,7 @@ public class UpdateTodoCommand implements Command {
 
         Todo updateTodo = (Todo)todo.clone();
         // todo에 Cloneable이 implements돼 있어서 clone();를 쓸 수 있다.
+        // Todo로 다운 캐스팅을 해야함
         updateTodo.setTitle(title);
         updateTodo.setDescription(description);
         updateTodo.setDone(done);
