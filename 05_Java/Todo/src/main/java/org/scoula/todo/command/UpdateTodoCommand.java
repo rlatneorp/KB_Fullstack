@@ -28,6 +28,7 @@ public class UpdateTodoCommand implements Command {
         updateTodo.setTitle(title);
         updateTodo.setDescription(description);
         updateTodo.setDone(done);
+
         dao.update(updateTodo);
     }
 }
