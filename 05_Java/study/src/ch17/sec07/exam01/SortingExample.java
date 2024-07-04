@@ -7,6 +7,7 @@ import java.util.List;
 public class SortingExample {
     public static void main(String[] args) {
         // List 컬렉션 생성
+//        comparable 인터페이스를 상속 받으면 compareTo를 무조건 구현해야한다
         List<Student> studentList = new ArrayList<Student>();
         studentList.add(new Student("홍길동", 30));
         studentList.add(new Student("신용권", 10));
