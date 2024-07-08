@@ -12,7 +12,7 @@ public class ReadExample {
 //                파일을 1byte씩 읽어온다
                 int data = is.read();
 //               바이트를 모두 다 읽어서 더이상 읽을 수 없는 경우 data가 -1을 리턴
-                if(data == -1) break; //
+                if(data == -1) break;
                 System.out.println(data);
             }
         } catch (FileNotFoundException e) {
