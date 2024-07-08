@@ -15,8 +15,9 @@ public class ReadExample {
             while (true) {
                 int data = reader.read();
                 if (data == -1 ) break;
-                System.out.println((char)data);
+                System.out.print((char)data);
             }
+//            reader를 다 사용하고 나서는 close 시켜준다
             reader.close();
             System.out.println();
 
@@ -27,7 +28,7 @@ public class ReadExample {
                 int num = reader.read(data);
                 if(num == -1 ) break;
                 for (int i = 0; i < num; i++) {
-                    System.out.println(data[i]);
+                    System.out.print(data[i]);
                 }
             }
             reader.close();

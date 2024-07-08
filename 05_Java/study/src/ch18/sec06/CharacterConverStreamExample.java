@@ -4,7 +4,7 @@ import java.io.*;
 
 public class CharacterConverStreamExample {
     public static void main(String[] args) throws Exception {
-        String str = "문자 변환 스트림을 사용합니다.";
+        write("문자 변환 스트림을 사용합니다.");
         String data = read();
         System.out.println(data);
     }
