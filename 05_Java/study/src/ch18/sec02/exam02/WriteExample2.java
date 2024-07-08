@@ -10,7 +10,7 @@ public class WriteExample2 {
             byte[] array = { 10, 20, 30, 40 ,50 };
 
 //            배열의 일부분만 잘라서 해당 경로의 파일에 저장함
-            os.write(array, 1, 3);
+            os.write(array, 1, 3); // 20, 30, 40
         } catch (IOException e) {
             e.printStackTrace();
         }
