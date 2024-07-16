@@ -52,6 +52,7 @@ class UserDaoTest {
     void get() throws SQLException {
         // 특정 사용자 정보 조회
         // 해당 값이 없으면 예외 던지기
+        // ::new -> 생성자 참조
         UserVO user = dao.get("ssamz3").orElseThrow(NoSuchElementException::new);
         // 조회한 사용자 값이 null이 아닌지 확인하는 테스트
         user.setName("쌤즈3");
