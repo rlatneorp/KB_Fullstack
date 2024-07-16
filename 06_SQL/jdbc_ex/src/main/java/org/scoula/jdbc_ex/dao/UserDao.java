@@ -16,13 +16,13 @@ public interface UserDao {
     // 모든 사용자 목록 조회 (CRUD중 R)
     List<UserVO> getList() throws SQLException;
 
-    // 특정 사용자 정보 조회(CRUD 중 R)
+    // 특정 사용자 정보 조회 (CRUD 중 R)
     // 존재하지 않는 경우 빈 Optional 객체 반환
     Optional<UserVO> get(String id) throws SQLException;
 
-    // 사용자의 정보 수정 (CRUD중 U)
+    // 사용자의 정보 수정 (CRUD 중 U)
     int update(UserVO user) throws SQLException;
 
-    // 회원 삭제
+    // 특정 사용자 삭제 (CRUD 중 D)
     int delete(String id) throws SQLException;
 }
