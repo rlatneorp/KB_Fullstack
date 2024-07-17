@@ -4,11 +4,13 @@ import org.scoula.lib.cli.ui.Input;
 
 public class StudentScoreService {
     StudentScores studentScores = StudentScores.getInstance();
+
     public void initScores() {
         StudentScores studentScores = StudentScores.getInstance();
         int studentNum = Input.getInt("학생수> ");
         studentScores.setStudentNum(studentNum);
     }
+
     public void getScores() {
         StudentScores studentScores = StudentScores.getInstance();
         int [] scores = studentScores.getScores();
@@ -24,6 +26,7 @@ public class StudentScoreService {
             System.out.println("scores[" + i + "]: " + scores[i]);
         }
     }
+
     public void analize() {
         StudentScores studentScores = StudentScores.getInstance();
         int [] scores = studentScores.getScores();

@@ -10,6 +10,7 @@ public class StudentScores {
     public static StudentScores getInstance() {
         return instance;
     }
+
     public int getStudentNum() {
         return studentNum;
     }
@@ -17,6 +18,7 @@ public class StudentScores {
         this.studentNum = studentNum;
         this.scores = new int[studentNum];
     }
+
     public int[] getScores() {
         return scores;
     }
