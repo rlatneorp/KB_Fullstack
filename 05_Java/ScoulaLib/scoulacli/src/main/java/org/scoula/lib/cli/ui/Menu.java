@@ -3,11 +3,10 @@ package org.scoula.lib.cli.ui;
 import org.scoula.lib.cli.command.Command;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Menu {
 //    메뉴들을 MenuItem 객체로 만들어서 관리해줌
-    List<MenuItem> menus;
+    ArrayList<MenuItem> menus;
 
 //    List는 인터페이스기 때문에 실제 객체 생성은 ArrayList로 해준다
 //    ArrayList는 크기를 미리 지정해줄 필요가 없다
