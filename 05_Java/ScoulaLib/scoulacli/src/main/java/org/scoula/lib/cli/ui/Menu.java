@@ -1,7 +1,6 @@
 package org.scoula.lib.cli.ui;
 
 import org.scoula.lib.cli.command.Command;
-
 import java.util.ArrayList;
 
 public class Menu {
