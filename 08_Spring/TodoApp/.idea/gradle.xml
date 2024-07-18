@@ -8,7 +8,7 @@
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/../ScoulaLib/scoulacli" />
+            <option value="$PROJECT_DIR$/../../05_Java/ScoulaLib/scoulacli" />
             <option value="$PROJECT_DIR$" />
           </set>
         </option>
