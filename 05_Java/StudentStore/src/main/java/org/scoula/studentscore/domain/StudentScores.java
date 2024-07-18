@@ -14,6 +14,7 @@ public class StudentScores {
     public int getStudentNum() {
         return studentNum;
     }
+
     public void setStudentNum(int studentNum) {
         this.studentNum = studentNum;
         this.scores = new int[studentNum];

@@ -30,6 +30,7 @@ public class JDBCUtil {
            e.printStackTrace();
        }
     }
+    
     // 데이터베이스 연결 객체를 반환하는 메서드
     public static Connection getConnection(){
         return conn;

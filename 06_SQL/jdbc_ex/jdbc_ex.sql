@@ -1,3 +1,10 @@
+-- 데이터베이스 준비
+CREATE DATABASE jdbc_ex;
+-- 사용자 준비
+CREATE USER 'jdbc_ex'@'%' IDENTIFIED BY 'jdbc_ex';
+GRANT ALL PRIVILEGES ON jdbc_ex.* TO 'jdbc_ex'@'%';
+FLUSH PRIVILEGES;
+
 -- 기본 데이터베이스 설정
 use jdbc_ex;
 -- USERS 데이터 있는 경우 삭제
