@@ -1,7 +1,6 @@
 package org.scoula.todo.dao;
 
 import org.scoula.todo.domain.Todo;
-
 import java.util.List;
 
 public interface TodoDao {

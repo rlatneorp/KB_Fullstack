@@ -10,6 +10,7 @@ public class TodoService {
 
     public void printTodoList() {
         for(Todo todo: dao.getList()) {
+//            todo의 ID는 gid로 객체 생성시 1씩 더해서 삽입해줌
             String line = "%2d] %s".formatted(todo.getId(), todo.getTitle());
             System.out.println(line);
         }
@@ -17,9 +18,11 @@ public class TodoService {
     }
 
     public void detaillTodo() {
+//        사용자에게 찾을 todo의 id 입력 받기
         int id = Input.getInt("Todo Id: ");
+//        사용자에게 받은 id로 해당 todo 찾기
         Todo todo = dao.getTodo(id);
-
+//        찾아온 todo의 상세정보 출력
         System.out.println("[Todo 상세보기]---------------------------------");
         System.out.println("ID : " + todo.getId());
         System.out.println("제목 : " + todo.getTitle());
@@ -66,7 +69,9 @@ public class TodoService {
     }
 
     public void deleteTodo() {
+//        사용자에게 삭제할 todo의 아이디 입력받기
         int id = Input.getInt("삭제할 Todo Id: ");
+//        해당하는 id의 todo를 목록에서 삭제
         dao.delete(id);
         System.out.println();
     }
