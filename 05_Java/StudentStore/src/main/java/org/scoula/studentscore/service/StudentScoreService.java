@@ -1,34 +1,35 @@
-package org.scoula.studentscore.domain;
+package org.scoula.studentscore.service;
 
 import org.scoula.lib.cli.ui.Input;
+import org.scoula.studentscore.domain.StudentScores;
 
 public class StudentScoreService {
     StudentScores studentScores = StudentScores.getInstance();
 
+//    메뉴1. 학생수 입력
     public void initScores() {
-        StudentScores studentScores = StudentScores.getInstance();
         int studentNum = Input.getInt("학생수> ");
         studentScores.setStudentNum(studentNum);
     }
 
+//    메뉴2. 점수 입력
     public void getScores() {
-        StudentScores studentScores = StudentScores.getInstance();
         int [] scores = studentScores.getScores();
         for(int i = 0; i< scores.length; i++) {
             scores[i] = Input.getInt("scores[" + i + "]> ");
         }
     }
 
+//    메뉴3.점수 출력
     public void printScores() {
-        StudentScores studentScores = StudentScores.getInstance();
         int [] scores = studentScores.getScores();
         for(int i=0; i<scores.length; i++) {
             System.out.println("scores[" + i + "]: " + scores[i]);
         }
     }
 
+//    메뉴4. 분석 출력
     public void analize() {
-        StudentScores studentScores = StudentScores.getInstance();
         int [] scores = studentScores.getScores();
         int max = 0;
         int sum = 0;

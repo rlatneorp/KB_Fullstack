@@ -3,7 +3,7 @@ package org.scoula.studentscore;
 import org.scoula.lib.cli.App;
 import org.scoula.lib.cli.ui.Menu;
 import org.scoula.lib.cli.ui.MenuItem;
-import org.scoula.studentscore.domain.StudentScoreService;
+import org.scoula.studentscore.service.StudentScoreService;
 
 public class StudentScoreApp extends App {
     StudentScoreService service = new StudentScoreService();
