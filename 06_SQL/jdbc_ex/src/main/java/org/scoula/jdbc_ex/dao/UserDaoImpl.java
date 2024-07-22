@@ -2,7 +2,6 @@ package org.scoula.jdbc_ex.dao;
 
 import org.scoula.jdbc_ex.common.JDBCUtil;
 import org.scoula.jdbc_ex.domain.UserVO;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,7 +48,6 @@ public class UserDaoImpl implements UserDao {
     @Override
     public List<UserVO> getList() throws SQLException {
         List<UserVO> userList = new ArrayList<UserVO>();
-        Connection conn = JDBCUtil.getConnection();
         try (PreparedStatement stmt = conn.prepareStatement(USER_LIST);
              ResultSet rs = stmt.executeQuery()) {
             // next()를 사용해서 REsultSet의 마지막 행까지 데이터를 가져온다
@@ -83,7 +81,6 @@ public class UserDaoImpl implements UserDao {
     // 회원 수정
     @Override
     public int update(UserVO user) throws SQLException {
-        Connection conn = JDBCUtil.getConnection();
         try (PreparedStatement stmt = conn.prepareStatement(USER_UPDATE)) {
            // 특정 아이디를 가진 회원의 이름과 역할 수정
             stmt.setString(1, user.getName());

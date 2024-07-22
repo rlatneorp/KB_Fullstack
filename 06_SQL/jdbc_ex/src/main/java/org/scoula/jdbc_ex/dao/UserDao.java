@@ -1,7 +1,6 @@
 package org.scoula.jdbc_ex.dao;
 
 import org.scoula.jdbc_ex.domain.UserVO;
-
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;

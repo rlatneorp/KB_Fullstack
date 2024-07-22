@@ -19,7 +19,7 @@ public class Input {
         // 이름(김길동):
         System.out.printf("%s(%s): ", title, defaultValue);
         String answer = scanner.nextLine();
-        // 그냥 엔터 쳤으면 defaultValue 리턴, 입력값이 있으면 answer 리터
+        // 그냥 엔터 쳤으면 defaultValue 리턴, 입력값이 있으면 answer 리턴
         return answer.isEmpty() ? defaultValue : answer;
     }
 
