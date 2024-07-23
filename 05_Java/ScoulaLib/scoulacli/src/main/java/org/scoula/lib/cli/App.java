@@ -21,6 +21,10 @@ public abstract class App {
     public void createMenu(Menu menu) {
     }
 
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+
     public void run() {
 //        ArrayList로 변하면서 초기에 크기를 지정해줄 필요가 없어짐
         init();

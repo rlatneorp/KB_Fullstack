@@ -7,7 +7,7 @@ import org.scoula.todo.service.TodoService;
 
 public class TodoApp extends App {
     TodoService service = new TodoService();
-
+    //    Command를 모두 service 클래스 내에 메소드로 캡슐화
     @Override
     public void createMenu(Menu menu) {
         super.createMenu(menu);

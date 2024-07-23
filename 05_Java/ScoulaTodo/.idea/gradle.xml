@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -8,7 +7,7 @@
         <option name="gradleHome" value="" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/../../04_Java/ScoulaLib/scoulacli" />
+            <option value="$PROJECT_DIR$/../ScoulaLib/scoulacli" />
             <option value="$PROJECT_DIR$" />
           </set>
         </option>

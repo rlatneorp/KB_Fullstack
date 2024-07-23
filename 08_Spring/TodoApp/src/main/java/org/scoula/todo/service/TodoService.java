@@ -38,12 +38,13 @@ public class TodoService {
         String title = Input.getLine("제목: ");
         String description = Input.getLine("설명: ");
         System.out.println("----------------------------------------------");
-
+        // 사용자한테 받아온 제목과 설명으로 새로운 할일 생성
         Todo todo = Todo.builder()
                 .title(title)
                 .description(description)
                 .done(false)
                 .build();
+        // 할일 목록에 추가
         dao.add(todo);
 
         System.out.println();
@@ -51,11 +52,15 @@ public class TodoService {
 
     public void updateTodo() {
         int id = Input.getInt("수정할 Id: ");
+//        해당 id를 가진 todo를 찾아옴
         Todo todo = dao.getTodo(id);
         System.out.println("[Todo 수정하기]---------------------------------");
         System.out.println("ID : " + todo.getId());
+//        값을 입력하지 않으면 원래 제목, 입력하면 새로운 제목으로 return
         String title = Input.getLine("제목", todo.getTitle());
+//        값을 입력하지 않으면 원래 설명, 입력하면 새로운 설명으로 return
         String description = Input.getLine("설명", todo.getDescription());
+//        값을 입력하지 않으면 원래 완료여부, 입력하면 새로운 완료여부으로 return
         Boolean done = Input.confirm("완료여부", todo.isDone());
         System.out.println("----------------------------------------------");
         System.out.println();
