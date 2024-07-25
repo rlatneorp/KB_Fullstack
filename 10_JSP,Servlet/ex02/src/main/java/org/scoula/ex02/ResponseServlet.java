@@ -12,7 +12,7 @@ public class ResponseServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         //MIME 타입 설정
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
         
         // 자바 I/O
         PrintWriter out = response.getWriter();
