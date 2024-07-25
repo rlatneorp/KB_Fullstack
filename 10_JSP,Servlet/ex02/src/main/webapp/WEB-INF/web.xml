@@ -3,4 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+<!--    HelloServlet이 어떤 클래스인지 찾아주는 설정-->
+<!--        <servlet>-->
+<!--            <servlet-name>HelloServlet</servlet-name>-->
+<!--            <servlet-class>org.scoula.ex02.HelloServlet</servlet-class>-->
+<!--        </servlet>-->
+<!--&lt;!&ndash;    HelloServlet의 url맵핑 설정&ndash;&gt;-->
+<!--        <servlet-mapping>-->
+<!--            <servlet-name>HelloServlet</servlet-name>-->
+<!--            <url-pattern>/hello-servlet</url-pattern>-->
+<!--        </servlet-mapping>-->
 </web-app>
