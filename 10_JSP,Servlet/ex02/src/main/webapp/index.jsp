@@ -10,5 +10,6 @@
 <br/>
 <a href="xxx">Hello Servlet</a>
 <a href="yyy">Hello Servlet</a>
+<a href="response">response</a>
 </body>
 </html>
