@@ -5,40 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="980589b4-ac2d-41d4-a587-841aa612cfdb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/TodoApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/common/JDBCUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/dao/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/domain/UserVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/PasswordMissmatchException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/UsernameDuplicateException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/service/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../test/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/classes/java/main/org/scoula/lib/cli/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/classes/java/main/org/scoula/lib/cli/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/classes/java/main/org/scoula/lib/cli/ui/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/classes/java/main/org/scoula/lib/cli/ui/Input.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/libs/ScoulaCli-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/libs/ScoulaCli-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/tmp/compileJava/compileTransaction/stash-dir/App.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/tmp/compileJava/compileTransaction/stash-dir/ExitCommand.class.uniqueId1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/tmp/compileJava/compileTransaction/stash-dir/Menu.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../ScoulaLib/scoulacli/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScoulaLib/scoulacli/src/main/java/org/scoula/lib/cli/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ScoulaLib/scoulacli/src/main/java/org/scoula/lib/cli/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ScoulaLib/scoulacli/src/main/java/org/scoula/lib/cli/ui/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ScoulaLib/scoulacli/src/main/java/org/scoula/lib/cli/ui/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/context/Context.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/exception/LoginFailException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/service/LoginService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/src/main/java/org/scoula/common/JDBCUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/main/java/org/scoula/common/JDBCUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/src/main/java/org/scoula/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/main/java/org/scoula/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/src/main/java/org/scoula/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/main/java/org/scoula/dao/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/src/main/java/org/scoula/domain/UserVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/main/java/org/scoula/domain/UserVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../test/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../test/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../08_Spring/TodoApp/src/main/java/org/scoula/todo/TodoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../08_Spring/TodoApp/src/main/java/org/scoula/todo/TodoApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../08_Spring/TodoApp/src/main/java/org/scoula/todo/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../08_Spring/TodoApp/src/main/java/org/scoula/todo/service/TodoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/scoula/TodoApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scoula/TodoApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/scoula/todo/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scoula/todo/service/AccountService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,10 +53,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2jdcrQdAGxHO6nBzHZ3EnsyRVb9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -90,6 +69,7 @@
   "keyToString": {
     "Gradle.ScoulaTodo [:TodoApp.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/KB_Fullstack/05_Java/ScoulaTodo/src/main/resources",
@@ -99,11 +79,16 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/KB_Fullstack/05_Java/ScoulaTodo/src/main/java/org/scoula/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -148,7 +133,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721720593669</updated>
-      <workItem from="1721720594850" duration="3899000" />
+      <workItem from="1721720594850" duration="4124000" />
+      <workItem from="1721788512832" duration="7037000" />
     </task>
     <servers />
   </component>
@@ -162,15 +148,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/org/scoula/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/scoula/TodoApp.java</url>
-          <line>49</line>
-          <properties class="org.scoula.TodoApp" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

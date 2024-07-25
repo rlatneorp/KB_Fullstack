@@ -4,6 +4,13 @@ import org.scoula.lib.cli.App;
 import org.scoula.lib.cli.ui.Input;
 import org.scoula.lib.cli.ui.Menu;
 import org.scoula.lib.cli.ui.MenuItem;
+import org.scoula.todo.context.Context;
+import org.scoula.todo.exception.LoginFailException;
+import org.scoula.todo.service.AccountService;
+import org.scoula.todo.service.LoginService;
+
+import javax.security.auth.login.LoginException;
+import java.sql.SQLException;
 
 import static org.scoula.lib.cli.ui.Input.confirm;
 
@@ -12,13 +19,16 @@ public class TodoApp extends App {
     Menu userMenu;
     // 로그아웃한 상태의 메뉴
     Menu annoymousMenu;
-    
+
+    AccountService accountService = new AccountService();
+    LoginService loginService = new LoginService();
+
     @Override
     public void init(){
         // 메소드 참조를 통해서 메뉴 생성
         annoymousMenu = new Menu();
         annoymousMenu.add(new MenuItem("로그인", this::login));
-        annoymousMenu.add(new MenuItem("가입", this::join));
+        annoymousMenu.add(new MenuItem("가입", accountService::join));
         annoymousMenu.add(new MenuItem("종료", this::exit));
         
         userMenu = new Menu();
@@ -28,23 +38,32 @@ public class TodoApp extends App {
         setMenu(annoymousMenu);
     }
 
-    private void logout() {
+    public void logout() {
 //        사용자가 y와 n을 입력함에 따라 true/false 반환
         if(confirm("로그아웃 할까요?")){
+            // 기존 로그인된 사용자 정보를 null로 변경
+            Context.getContext().setUser(null);
 //            사용자가 y를 입력할시 로그아웃되면서 메뉴 교체
             setMenu(annoymousMenu);
         }
     }
 
-    private void exit() {
+    public void exit() {
     }
 
-    private void join() {
+    public void join() {
+
     }
 
-    private void login() {
-        // 로그인 후에는 메뉴 교체
-        setMenu(userMenu);
+    public void login() {
+        try {
+            loginService.login();
+            setMenu(userMenu);
+        } catch (SQLException e){
+            throw new RuntimeException(e);
+        } catch (LoginFailException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void main(String[] args){
