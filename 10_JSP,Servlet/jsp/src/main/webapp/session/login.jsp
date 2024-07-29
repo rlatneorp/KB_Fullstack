@@ -8,6 +8,7 @@
     <%
         String id = request.getParameter("userid");
         if (id == null) {
+//            id가 null이거나 입력되지 않은 경우 loginForm.html로 다시 이동하도록 리디렉트 설정
             response.sendRedirect("loginForm.html");
         } else {
             String pw = request.getParameter("Password");
