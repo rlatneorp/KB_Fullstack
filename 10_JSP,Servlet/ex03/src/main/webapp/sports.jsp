@@ -4,8 +4,9 @@
     <title>getParameterValues 실습</title>
 </head>
 <body>
+    <h1>getParameterValues 실습</h1>
     <form action="sports" method="post">
-        <filedset>
+        <fieldset>
             <legend> 좋아하는 운동 및 성별 </legend>
             <ul>
                 <li>
@@ -17,14 +18,14 @@
                     <input type="checkbox" id="basketball" name="sports" value="농구">
                 </li>
                 <li>
-                    <label for="male">남</label>
-                    <input type="radio" id="male" name="sex" value="남자" checked>
                     <label for="female">여</label>
-                    <input type="radio" id="female" name="sex" value="여자">
+                    <input type="radio" id="female" name="sex" value="여자" checked>
+                    <label for="male">남</label>
+                    <input type="radio" id="male" name="sex" value="남자">
                 </li>
                 <li><input type="submit" value="전송"></li>
             </ul>
-        </filedset>
+        </fieldset>
     </form>
 </body>
 </html>
