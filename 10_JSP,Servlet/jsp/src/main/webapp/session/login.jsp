@@ -15,8 +15,8 @@
             String pw = request.getParameter("Password");
 //            session내에 해당 값들을 저장함
             session.setAttribute("userid", id);
-            session.setAttribute("password", pw);
-            out.print("안녕하세요 " + id);
+            session.setAttribute("Password", pw);
+            out.print("안녕하세요 " + id + "<br>");
             out.print("<a href='loginInfo.jsp'>정보보기</a>");
         }
     %>
