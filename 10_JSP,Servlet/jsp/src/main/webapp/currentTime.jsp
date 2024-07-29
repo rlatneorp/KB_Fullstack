@@ -13,8 +13,14 @@
     for(int i = 0; i < 10; i++){
         sum += i;
     }
+    Date d2 = null;
 %>
 현재날짜 : <%= d%> <br>
-1~10의 합 : <%= sum %>
+1~10의 합 : <%= sum %> <br>
+
+<% if(d2 != null){ %>
+    <%= d2%>
+<%}%>
+
 </body>
 </html>
