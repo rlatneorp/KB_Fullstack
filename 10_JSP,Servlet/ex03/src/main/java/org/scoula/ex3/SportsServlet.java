@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 @WebServlet("/sports")
 public class SportsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+//        request.setCharacterEncoding("UTF-8");
 //        sports에 저장되어있는 값이 여러개이므로 getParameterValues를 통해 배열로 받아옴
         String[] sports = request.getParameterValues("sports");
         String sex = request.getParameter("sex");

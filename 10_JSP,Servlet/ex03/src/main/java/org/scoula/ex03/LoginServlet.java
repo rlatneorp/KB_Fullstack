@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        post 메소드의 경우 기본값 인코딩은 한글이 깨지므로 UTF-8 변경 필수
-        request.setCharacterEncoding("UTF-8");
+//        request.setCharacterEncoding("UTF-8");
 //        get 메서드와 동일한 로직을 처리하고 싶으므로 doGet 호출
         doGet(request, response);
     }
