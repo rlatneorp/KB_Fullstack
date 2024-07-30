@@ -4,7 +4,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/request_redirect")
 public class ResponseRedirectServlet extends HttpServlet {

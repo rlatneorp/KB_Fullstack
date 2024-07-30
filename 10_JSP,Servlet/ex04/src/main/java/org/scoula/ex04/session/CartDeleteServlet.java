@@ -31,8 +31,4 @@ public class CartDeleteServlet extends HttpServlet {
         out.print("</body></html>");
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
 }
