@@ -5,7 +5,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(urlPatterns=("/*"))
+@WebFilter(urlPatterns={"/*"})
 public class PerformanceFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
