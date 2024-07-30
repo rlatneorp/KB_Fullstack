@@ -23,13 +23,18 @@ public class CartViewServlet extends HttpServlet {
         out.print("장바구니 리스트");
 
         // 세션 객체 얻기
+//        현재 세션을 가져오기 + false : 세션이 없으면 새로 생성하진 않겠다
         HttpSession session = request.getSession(false);
+//        20초 동안 세션을 활성화 시킴
         session.setMaxInactiveInterval(20); //20초
 
         if(session != null){
+//            세션이 존재하는 경우
             ArrayList<String> list = (ArrayList<String>) session.getAttribute("product");
+//            product에 저장된 상품들을 모두 출력
             out.print("상품 : " + list + "<br>");
         } else {
+//            세션이 존재하지 않는 경우
             out.print("세션 없음" + "<br>");
         }
 
