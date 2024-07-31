@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
         Member member = new Member("홍길동", userid);
         session.setAttribute("user", member);
 
+//        설정한 request를 login.jsp로 보내서 화면을 띄워준다
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 }

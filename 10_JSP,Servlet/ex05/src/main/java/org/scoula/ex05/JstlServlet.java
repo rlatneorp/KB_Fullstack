@@ -6,11 +6,11 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-@WebServlet("/jstl.ex")
+@WebServlet("/jstl_ex")
 public class JstlServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,6 +22,8 @@ public class JstlServlet extends HttpServlet {
 
         request.setAttribute("members", members);
         request.setAttribute("role", "ADMIN");
+
+        request.setAttribute("today", new Date());
 
         request.getRequestDispatcher("jstl_ex.jsp")
                 .forward(request, response);
