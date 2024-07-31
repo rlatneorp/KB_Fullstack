@@ -16,10 +16,11 @@ public class JstlServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Member> members = new ArrayList<Member>();
         for (int i = 0; i < 10; i++) {
+            // 10명의 member 객체를 만들고 리스트에 저장
             Member member = new Member("홍길동_" + i, "hong_" + i);
             members.add(member);
         }
-
+//        10명의 리스트 정보를 request scope에 속성 설정
         request.setAttribute("members", members);
         request.setAttribute("role", "ADMIN");
 
