@@ -9,7 +9,7 @@
 </c:if>
 <%--user 값이 null이 아니면 user이름, 로그아웃 화면 보여주기--%>
 <c:if test="${!empty user}">
-    ${user.name} | <a href="/logout"> 로그아웃</a>
+    <a href="/info">${user.userid}</a>의 정보 | <a href="/logout"> 로그아웃</a>
 </c:if>
 <hr>
 

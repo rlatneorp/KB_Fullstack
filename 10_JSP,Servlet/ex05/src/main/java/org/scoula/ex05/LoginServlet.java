@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
         request.setAttribute("login", loginDTO);
 
         HttpSession session = request.getSession();
-        Member member = new Member("홍길동", userid);
+        Member member = new Member();
         session.setAttribute("user", member);
 
         request.getRequestDispatcher("login.jsp").forward(request, response);
