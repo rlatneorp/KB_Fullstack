@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fb69460-9c9d-4ecb-b106-4745e3745af6" name="Changes" comment="feat : FrontController 연습">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/DispatcherServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scoula/frontcontroller/FrontControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scoula/frontcontroller/FrontControllerServlet.java" afterDir="false" />
+    <list default="true" id="7fb69460-9c9d-4ecb-b106-4745e3745af6" name="Changes" comment="refactor : 반복되는 부분 부모클래스로 만들고 자식을 상속">
       <change beforePath="$PROJECT_DIR$/../../proj" beforeDir="false" afterPath="$PROJECT_DIR$/../../proj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +188,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722471687920</updated>
-      <workItem from="1722471688948" duration="7233000" />
+      <workItem from="1722471688948" duration="7570000" />
     </task>
     <task id="LOCAL-00001" summary="feat : FrontController 연습">
       <option name="closed" value="true" />
@@ -209,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722478334208</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor : 반복되는 부분 부모클래스로 만들고 자식을 상속">
+      <option name="closed" value="true" />
+      <created>1722479268651</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722479268651</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +222,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat : FrontController 연습" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : FrontController 연습" />
+    <MESSAGE value="refactor : 반복되는 부분 부모클래스로 만들고 자식을 상속" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor : 반복되는 부분 부모클래스로 만들고 자식을 상속" />
   </component>
 </project>
