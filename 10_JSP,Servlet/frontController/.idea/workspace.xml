@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fb69460-9c9d-4ecb-b106-4745e3745af6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../ex05/src/main/java/org/scoula/ex05/InfoServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ex05/src/main/java/org/scoula/ex05/NavbarServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/controller/TodoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/frontcontroller/FrontControllerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/404.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/create.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/update.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/todo/view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex05/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex05/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex05/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ex05/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex05/src/main/java/org/scoula/ex05/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex05/src/main/java/org/scoula/ex05/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex05/src/main/java/org/scoula/ex05/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ex05/src/main/java/org/scoula/ex05/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ex05/src/main/webapp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../ex05/src/main/webapp/navbar.jsp" afterDir="false" />
+    <list default="true" id="7fb69460-9c9d-4ecb-b106-4745e3745af6" name="Changes" comment="feat : FrontController 연습">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/scoula/DispatcherServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/scoula/frontcontroller/FrontControllerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scoula/frontcontroller/FrontControllerServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../proj" beforeDir="false" afterPath="$PROJECT_DIR$/../../proj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +25,8 @@
       <list>
         <option value="Servlet" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -208,11 +191,32 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722471687920</updated>
-      <workItem from="1722471688948" duration="6343000" />
+      <workItem from="1722471688948" duration="7233000" />
     </task>
+    <task id="LOCAL-00001" summary="feat : FrontController 연습">
+      <option name="closed" value="true" />
+      <created>1722478322292</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1722478322292</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat : FrontController 연습">
+      <option name="closed" value="true" />
+      <created>1722478334208</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1722478334208</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat : FrontController 연습" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : FrontController 연습" />
   </component>
 </project>
