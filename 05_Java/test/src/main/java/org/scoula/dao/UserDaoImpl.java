@@ -48,10 +48,8 @@ public class UserDaoImpl implements UserDao {
             while(rs.next()){
                 UserVO user = map(rs);
                 list.add(user);
-            }
-        }
-        return list;
-    }
+g            }
+eeeeeeeeeeeeeeeeee    }
 
     @Override
     public Optional<UserVO> get(String id) throws SQLException {
@@ -61,7 +59,7 @@ public class UserDaoImpl implements UserDao {
                 if(rs.next()){
                      return Optional.of(map(rs));
                 }
-            }
+            }q
         }
         return Optional.empty();
     }
