@@ -100,20 +100,24 @@ public class SampleController {
         return "sample/ex04";
     }
 
+//    return 값이 void일 경우 요청 url을 기준으로 jsp 파일을 찾는다
     @GetMapping("/ex05")
     public void ex05(){
         log.info("/ex05..........");
     }
 
+//    리다이렉트 시 요청 파라미터로 name과 age를 추가해준다
+//    해당경로 접근시 http://localhost:8080/sample/ex06-2?name=AAA&age=18 로 리다이렉트됨
     @GetMapping("/ex06")
     public String ex06(RedirectAttributes ra){
         log.info("/ex06.........");
         ra.addAttribute("name", "AAA");
         ra.addAttribute("age", 18);
-
+//        리다이렉트 시 "redirect:" 접두사를 사용한다
         return "redirect:/sample/ex06-2";
     }
 
+//    @ResponseBody 어노테이션은 변환된 객체가 json형식으로 변환되어 보여지도록 한다
     @GetMapping("/ex07")
     public @ResponseBody SampleDTO ex07(){
         log.info("/ex07.......");
@@ -125,15 +129,16 @@ public class SampleController {
         return dto;
     }
 
+//    ResponseEntity = json 형태의 body + 응답 헤더까지 추가
     @GetMapping("/ex08")
     public ResponseEntity<String> ex08(){
         log.info("/ex08.........");
-
         String msg = "{\"name\": \"홍길동\"}";
 
         HttpHeaders header = new HttpHeaders();
-        header.add("Content-Type", "application/json; charset-UTF-8");
-
+//      HttpHeaders 객체 생성 후 Content-Type 헤더 설정
+        header.add("Content-Type", "application/json; charset=UTF-8");
+//      ResponseEntity객체 내에 바디, 헤더, 상태코드 OK는 200 반환
         return new ResponseEntity<>(msg, header, HttpStatus.OK);
     }
 
@@ -146,9 +151,8 @@ public class SampleController {
     public void exUploadPost(ArrayList<MultipartFile> files){
         for(MultipartFile file : files){
             log.info("---------------------");
-            log.info("name : " + file.getOriginalFilename());
+            log.info("name : " + file.getOriginalFilename()); // 파일의 원래 이름 출력
             log.info("size : " + file.getSize());
         }
     }
-
 }

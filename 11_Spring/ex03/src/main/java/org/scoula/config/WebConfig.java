@@ -15,7 +15,7 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     final String LOCATION = "c:/upload";
     final long MAX_FILE_SIZE = 1024 * 1024 * 10L;
     final long MAX_REQUEST_SIZE = 1024 * 1024 * 20L;
-    final int FILE_SIZE_THRESHOLD = 1024 * 1024 * 5;;
+    final int FILE_SIZE_THRESHOLD = 1024 * 1024 * 5;
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
@@ -51,6 +51,6 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
                 MAX_REQUEST_SIZE, // 업로드 가능한 전체 최대 크기(여러 파일 업로드 하는 경우)
                 FILE_SIZE_THRESHOLD // 메모리 파일의 최대 크기(이보다 작으면 실제 메모리에서만 작업)
         );
-        registration.setMultipartConfig(multipartConfig);
+        registration.setMultipartConfig(multipartConfig); // 설정한 MultipartConfigElement 등록
     }
 }

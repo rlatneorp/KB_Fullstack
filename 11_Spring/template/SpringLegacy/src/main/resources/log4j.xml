@@ -9,10 +9,12 @@
             <param name="ConversionPattern" value="%-5p: %c - %m%n" />
         </layout>
     </appender>
+
     <!-- Application Loggers -->
     <logger name="org.scoula">  <!-- 경로에 따라 다름-->
         <level value="info" />
     </logger>
+
     <!-- 3rdparty Loggers -->
     <logger name="org.springframework.core">
         <level value="info" />
@@ -26,9 +28,11 @@
     <logger name="org.springframework.web">
         <level value="info" />
     </logger>
+
     <!-- Root Logger -->
     <root>
     <priority value="info" />
         <appender-ref ref="console" />
     </root>
-    </log4j:configuration>
+
+</log4j:configuration>

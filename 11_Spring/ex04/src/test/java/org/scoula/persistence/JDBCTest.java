@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 @Log4j
 public class JDBCTest {
+//    정적 블록 사용해서 JDBC 드라이버 로드
     static{
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
