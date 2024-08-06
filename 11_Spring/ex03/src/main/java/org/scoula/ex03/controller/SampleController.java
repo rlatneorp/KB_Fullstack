@@ -4,11 +4,15 @@ import lombok.extern.log4j.Log4j;
 import org.scoula.ex03.dto.SampleDTO;
 import org.scoula.ex03.dto.SampleDTOList;
 import org.scoula.ex03.dto.TodoDTO;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 @Controller
@@ -94,6 +98,57 @@ public class SampleController {
         log.info("page: " + page);
 
         return "sample/ex04";
+    }
+
+    @GetMapping("/ex05")
+    public void ex05(){
+        log.info("/ex05..........");
+    }
+
+    @GetMapping("/ex06")
+    public String ex06(RedirectAttributes ra){
+        log.info("/ex06.........");
+        ra.addAttribute("name", "AAA");
+        ra.addAttribute("age", 18);
+
+        return "redirect:/sample/ex06-2";
+    }
+
+    @GetMapping("/ex07")
+    public @ResponseBody SampleDTO ex07(){
+        log.info("/ex07.......");
+
+        SampleDTO dto = new SampleDTO();
+        dto.setAge(10);
+        dto.setName("홍길동");
+
+        return dto;
+    }
+
+    @GetMapping("/ex08")
+    public ResponseEntity<String> ex08(){
+        log.info("/ex08.........");
+
+        String msg = "{\"name\": \"홍길동\"}";
+
+        HttpHeaders header = new HttpHeaders();
+        header.add("Content-Type", "application/json; charset-UTF-8");
+
+        return new ResponseEntity<>(msg, header, HttpStatus.OK);
+    }
+
+    @GetMapping("/exUpload")
+    public void exUpload(){
+        log.info("exUpload..........");
+    }
+
+    @PostMapping("/exUploadPost")
+    public void exUploadPost(ArrayList<MultipartFile> files){
+        for(MultipartFile file : files){
+            log.info("---------------------");
+            log.info("name : " + file.getOriginalFilename());
+            log.info("size : " + file.getSize());
+        }
     }
 
 }
