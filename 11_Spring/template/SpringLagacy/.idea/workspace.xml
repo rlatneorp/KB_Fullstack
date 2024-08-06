@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8392fe04-b39b-4625-88ab-1808fb227b6d" name="Changes" comment="feat : spring 초기 설정 log warn으로 상향">
-      <change beforePath="$PROJECT_DIR$/../../../10_JSP,Servlet/frontController/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../10_JSP,Servlet/frontController/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../proj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../proj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -185,6 +184,7 @@
       <workItem from="1722479710765" duration="3607000" />
       <workItem from="1722483472908" duration="159000" />
       <workItem from="1722500542066" duration="180000" />
+      <workItem from="1722910823959" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="feat : spring 초기 설정">
       <option name="closed" value="true" />
