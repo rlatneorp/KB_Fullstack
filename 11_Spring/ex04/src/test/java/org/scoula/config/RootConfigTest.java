@@ -24,6 +24,8 @@ class RootConfigTest {
 
     @Autowired
     private DataSource dataSource;
+
+//    Sprint Context에서 sqlSessionFactory 빈을 주입 받아옴
     @Autowired
     private SqlSessionFactory sqlSessionFactory;
 

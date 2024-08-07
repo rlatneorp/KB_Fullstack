@@ -40,6 +40,7 @@ public class RootConfig {
         return dataSource;
     }
 
+    // application scope
     @Autowired
     ApplicationContext applicationContext;
 
@@ -47,6 +48,7 @@ public class RootConfig {
     public SqlSessionFactory sqlSessionFactory() throws Exception {
         SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
         sqlSessionFactory.setConfigLocation(
+//                mybatis-config.xml 설정 파일의 위치 알려줌
                 applicationContext.getResource("classpath:/mybatis-config.xml"));
         sqlSessionFactory.setDataSource(dataSource());
         return (SqlSessionFactory) sqlSessionFactory.getObject();
