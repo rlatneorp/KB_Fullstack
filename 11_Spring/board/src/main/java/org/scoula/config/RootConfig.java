@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -20,6 +21,7 @@ import javax.sql.DataSource;
 //그냥 /를 사용하면 webapp 폴더가 루트가 된다
 @MapperScan(basePackages = {"org.scoula.board.mapper"}) // 나중에 입력한다
 @PropertySource({"classpath:/application.properties"})
+@ComponentScan(basePackages = {"org.scoula.board.service"})
 public class RootConfig {
 //    application.properties에서 값을 읽어와서 변수에 주입
     @Value("${jdbc.driver}") String driver;
