@@ -53,10 +53,13 @@ class BoardMapperTest {
     @DisplayName("BoardMapper의 글 수정")
     public void update() {
         BoardVO board = new BoardVO();
+//        no에는 존재하는 no값을 적어줘야 제대로 수정이 된다
         board.setNo(5L);
         board.setTitle("수정된 제목");
         board.setContent("수정된 내용");
         board.setWriter("user00");
+        
+//        count에는 수정된 행의 수를 반환한다.
         int count = mapper.update(board);
         log.info("UPDATE COUNT: " + count);
     }
@@ -64,6 +67,7 @@ class BoardMapperTest {
     @Test
     @DisplayName("BoardMapper의 글 삭제")
     public void delete() {
+//        mapper.delete(3L) 삭제된 행의 개수 출력
         log.info("DELETE COUNT: " + mapper.delete(3L));
     }
 }
