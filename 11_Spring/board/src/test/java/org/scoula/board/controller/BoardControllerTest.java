@@ -46,4 +46,21 @@ public class BoardControllerTest {
                         .getModelMap() // Model 리턴
         );
     }
+
+    @Test
+    public void create() throws Exception {
+        String resultPage = mockMvc
+                .perform(
+                        MockMvcRequestBuilders.post("/board/create")
+                                .param("title", "테스트 새글 제목")
+                                .param("content", "테스트 새글 내용")
+                                .param("writer", "user1"))
+                .andReturn()
+                .getModelAndView()
+                .getViewName(); // 해당하는 뷰의 이름 return
+
+//        post로 연결했기 때문에 리스트 페이지 리다이렉트 됨
+//        redirect:/board/list
+        log.info(resultPage);
+    }
 }
