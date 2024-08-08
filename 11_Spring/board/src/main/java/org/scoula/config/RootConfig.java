@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 //그냥 /를 사용하면 webapp 폴더가 루트가 된다
 @MapperScan(basePackages = {"org.scoula.board.mapper"}) // 나중에 입력한다
 @PropertySource({"classpath:/application.properties"})
-@ComponentScan(basePackages = {"org.scoula.board.service"})
+@ComponentScan(basePackages = {"org.scoula.board.service"}) //service는 웹과 무관
 public class RootConfig {
 //    application.properties에서 값을 읽어와서 변수에 주입
     @Value("${jdbc.driver}") String driver;

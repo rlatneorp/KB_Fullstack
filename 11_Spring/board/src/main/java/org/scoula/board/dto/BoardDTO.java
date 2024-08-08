@@ -23,6 +23,7 @@ public class BoardDTO {
 
     // VO  DTO 변환
     public static BoardDTO of(BoardVO vo) {
+//        vo가 null 이면 null 반환, null이 아니면 BoardDTO로 변환해줌
         return vo == null ? null : BoardDTO.builder()
                 .no(vo.getNo())
                 .title(vo.getTitle())
@@ -30,7 +31,7 @@ public class BoardDTO {
                 .writer(vo.getWriter()) .regDate(vo.getRegDate()) .updateDate(vo.getUpdateDate())
                 .build();
     }
-    // DTO  VO 변환
+    // DTO VO 변환
     public BoardVO toVo() {
         return BoardVO.builder()
                 .no(no)
@@ -40,6 +41,5 @@ public class BoardDTO {
                 .updateDate(updateDate)
                 .build();
     }
-
-
 }
+
