@@ -16,6 +16,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 @ExtendWith(SpringExtension.class)
 @WebAppConfiguration // MockMvc를 사용하기 위해 필요
 @ContextConfiguration(classes ={RootConfig.class,ServletConfig.class}) // Spring 컨테이너 설정
@@ -63,4 +66,48 @@ public class BoardControllerTest {
 //        redirect:/board/list
         log.info(resultPage);
     }
+
+    @Test
+    public void get() throws Exception {
+
+        log.info(
+                mockMvc.perform(MockMvcRequestBuilders.get("/board/get").param("no", "1"))
+                        .andReturn()
+                        .getModelAndView()
+                        .getModelMap()
+        );
+    }
+
+    @Test
+    public void update() throws Exception {
+        String resultPage = mockMvc.perform(
+                MockMvcRequestBuilders.post("/board/update")
+                        .param("no","1")
+                        .param("title", "수정된 테스트 새글 제목")
+                        .param("content","수정된 테스트 새글 내용")
+                        .param("writer", "user00"))
+                .andReturn()
+                .getModelAndView()
+                .getViewName();
+
+        log.info(resultPage);
+
+    }
+
+    @Test
+    public void delete() throws Exception{
+        // 삭제전 데이터베이스에 게시물 번호 확인할 것
+        String resultPage = mockMvc.perform(
+                MockMvcRequestBuilders
+                        .post("/board/delete")
+                        .param("no", "25"))
+                .andReturn()
+                .getModelAndView()
+                .getViewName();
+
+        log.info(resultPage);
+    }
+
 }
+
+
