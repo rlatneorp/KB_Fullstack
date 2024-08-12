@@ -39,9 +39,10 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
-    @GetMapping({"/get","/update"})
-    public void get(@RequestParam("no") Long no, Model model){
+    @GetMapping({"/get","/update"}) // get과 update 경로를 둘 다 처리
+    public void get(@RequestParam("no") Long no, Model model){ // @RequestParam:주소 뒤에 ? 를 붙여서 쿼리스트링으로 정보를 받아준다
         log.info("/get or update");
+        // model 객체는 데이터를 뷰로 전달하기 위해 사용
         model.addAttribute("board", service.get(no));
     }
 

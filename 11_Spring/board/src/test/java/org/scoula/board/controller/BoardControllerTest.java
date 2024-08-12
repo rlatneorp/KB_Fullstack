@@ -69,7 +69,7 @@ public class BoardControllerTest {
 
     @Test
     public void get() throws Exception {
-
+//        param 부분에 해당 주소 값을 받아올때 필요한 파라미터 값을 넘겨준다
         log.info(
                 mockMvc.perform(MockMvcRequestBuilders.get("/board/get").param("no", "1"))
                         .andReturn()
