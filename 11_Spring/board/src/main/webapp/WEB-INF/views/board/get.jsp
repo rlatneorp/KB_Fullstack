@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE html>
 <%@include file="../layouts/header.jsp"%>
 <h1 class="page-header my-4"><i class="far fa-file-alt"></i> ${board.title}</h1>
 <div class="d-flex justify-content-between">

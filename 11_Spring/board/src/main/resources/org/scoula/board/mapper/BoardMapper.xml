@@ -34,7 +34,7 @@
         delete from tbl_board where no = #{no}
     </delete>
 
-    <select id="getList" resultType="org.scoula.board.domain.BoardVO">
+    <select id="getList" resultType="BoardVO">
         <![CDATA[
             select * from tbl_board
             order by no desc

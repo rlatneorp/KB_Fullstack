@@ -49,15 +49,13 @@ public class BoardController {
     @PostMapping("/update")
     public String update(BoardDTO board) {
         log.info("update: " + board);
-
         service.update(board);
-
+//        수정한 후 목록 페이지로 리다이렉트
         return "redirect:/board/list";
     }
 
     @PostMapping("/delete")
     public String delete(@RequestParam("no") Long no) {
-
         log.info("delete... " + no);
         service.delete(no);
         return "redirect:/board/list";

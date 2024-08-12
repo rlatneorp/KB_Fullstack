@@ -5,7 +5,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <!-- 좌측 메뉴 구성 - ->
+
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="#">메뉴1</a>
@@ -17,11 +17,11 @@
                 <a class="nav-link" href="#">메뉴3</a>
             </li>
         </ul>
-                <!-- 우측 메뉴 -->
+
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <img src="https://randomuser.me/api/portraits/men/12.jpg"
+                    <img src="https://randomuser.me/api/portraits/men/60.jpg"
                          class="avatar-sm"/>
                     admin
                 </a>

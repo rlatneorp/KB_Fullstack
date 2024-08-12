@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE html>
 <%@include file="../layouts/header.jsp"%>
 <h1 class="page-header my-4"><i class="fas fa-list"></i> 글 목록</h1>
 <table class="table table-hover">
@@ -14,14 +14,19 @@
     </tr>
     </thead>
     <tbody>
+
+<%--    service의 getlist호출-> mapper의 getlist호출 ->테이블 전체를 리스트로 조회--%>
     <c:forEach var="board" items="${list}">
         <tr>
+<%--            속성을 가져올때는 getter로 접근--%>
             <td>${board.no}</td>
             <td>
+<%--                쿼리 스트링으로 no 값이 들어가도록 링크 설정--%>
                 <a href="get?no=${board.no}">${board.title}</a>
             </td>
             <td>${board.writer}</td>
             <td>
+<%--                원하는 형식으로 날짜를 출력하기 위해 fmt 사용--%>
                 <fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}"/>
             </td>
         </tr>
