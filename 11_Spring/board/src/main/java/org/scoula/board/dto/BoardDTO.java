@@ -24,8 +24,10 @@ public class BoardDTO {
     private String writer;
     private Date regDate;
     private Date updateDate;
-    // 첨부파일
+    // 첨부파일 여러개 추가가능
     private List<BoardAttachmentVO> attaches;
+
+    // VO랑 다르게 클래스 사용 가능
     List<MultipartFile> files = new ArrayList<>(); // 실제 업로드된 파일(Multipart) 목록
 
     // VO  DTO 변환

@@ -22,6 +22,7 @@ import java.util.Optional;
 public class BoardServiceImpl implements BoardService {
 //    생성자가 하나 있다면 그 생성자로 주입 가능
     final private BoardMapper mapper;
+//    해당 경로가 없으면 생성하도록 처리해줬으므로 폴더가 없어도 상관없음
     private final static String BASE_DIR = "c:/upload/board";
 
     @Override
@@ -80,12 +81,17 @@ public class BoardServiceImpl implements BoardService {
         }
     }
 
+//    해당 게시물에 참조 파일들을 추가해주는 메소드
     private void upload(Long bno, List<MultipartFile> files) {
         for(MultipartFile part: files) {
+//            첨부파일 목록에서 파일 하나씩 꺼내서 비어있는지 확인
+//            비어있으면 다음 파일 확인
             if(part.isEmpty()) continue;
             try {
+//                업로드 경로 생성 후 BoardAttachmentVO 객체 생성
                 String uploadPath = UploadFiles.upload(BASE_DIR, part);
                 BoardAttachmentVO attach = BoardAttachmentVO.of(part, bno, uploadPath);
+//                BoardAttachment 테이블에 참조파일 데이터 하나 추가
                 mapper.createAttachment(attach);
             } catch (IOException e) {
                 throw new RuntimeException(e); // @Transactional에서 감지, 자동 rollback

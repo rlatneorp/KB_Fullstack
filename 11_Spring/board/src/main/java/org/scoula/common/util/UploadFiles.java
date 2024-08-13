@@ -16,10 +16,12 @@ public class UploadFiles {
     public static String upload(String baseDir, MultipartFile part) throws IOException {
         // 기본 디렉토리가 있는지 확인, 없으면 새로 생성
         File base = new File(baseDir);
+//        exists 메소드로 해당 경로가 존재하는지 체크
         if(!base.exists()) {
             base.mkdirs(); // 중간에 존재하지 않는 디렉토리까지 모두 생성
         }
-        String fileName = part.getOriginalFilename();
+        String fileName = part.getOriginalFilename(); // 원본 파일명 저장
+//        base 디렉토리 내에 교유한 이름을 가지는 파일 생성
         File dest = new File(baseDir, UploadFileName.getUniqueName(fileName));
         part.transferTo(dest); // 지정한 경로로 업로드 파일 이동
         return dest.getPath(); // 저장된 파일 경로 리턴
