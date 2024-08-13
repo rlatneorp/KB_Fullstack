@@ -11,6 +11,18 @@
         <fmt:formatDate pattern="yyyy-MM-dd" value="${board.regDate}"/>
     </div>
 </div>
+
+<div class="text-end">
+    <c:forEach var="file" items="${board.attaches}">
+        <div class="attach-file-item">
+            <a href="/board/download/${file.no}" class="file-link">
+                <i class="fa-solid fa-floppy-disk"></i>
+                    ${file.filename} (${file.fileSize})<br>
+            </a>
+        </div>
+    </c:forEach>
+</div>
+
 <hr>
 <div>
     <pre>${board.content}</pre>

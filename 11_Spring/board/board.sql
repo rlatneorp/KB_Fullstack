@@ -27,3 +27,11 @@ CREATE TABLE tbl_board_attachment (
       reg_date DATETIME DEFAULT now(),
       CONSTRAINT FOREIGN KEY(bno) REFERENCES tbl_board(no)
 );
+
+select b.*, a.no as ano, a.bno, a.filename, a.path,
+       a.content_type, a.size, a.reg_date as a_reg_date
+from tbl_board b
+         left outer join tbl_board_attachment a
+                         on b.no = a.bno
+where b.no = 15
+order by filename;
