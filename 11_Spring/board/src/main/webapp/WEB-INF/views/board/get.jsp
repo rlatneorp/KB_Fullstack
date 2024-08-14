@@ -13,9 +13,12 @@
 </div>
 
 <div class="text-end">
+<%--    BoardDTO의 attaches 리스트를 돌면서 하나씩 file이라는 이름으로 꺼낸다--%>
     <c:forEach var="file" items="${board.attaches}">
         <div class="attach-file-item">
+<%--            파일을 다운로드할 수 있는 링크 생성--%>
             <a href="/board/download/${file.no}" class="file-link">
+<%--                디스크 아이콘, 파일 원본명, 파일 사이즈 출력--%>
                 <i class="fa-solid fa-floppy-disk"></i>
                     ${file.filename} (${file.fileSize})<br>
             </a>

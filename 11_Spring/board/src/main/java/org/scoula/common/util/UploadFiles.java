@@ -35,13 +35,20 @@ public class UploadFiles {
         return new DecimalFormat("#,##0.#").format(size / Math.pow(1024, digitGroups)) + " " + units[digitGroups];
     }
 
+    // 파일의 다운로드를 처리해주는 메소드
     public static void download(HttpServletResponse response, File file, String orgName) throws Exception {
+//        response의 contentType을 다운로드 파일로 설정
         response.setContentType("application/download");
+//        파일의 크기를 response에 설정
         response.setContentLength((int)file.length());
         String filename = URLEncoder.encode(orgName, "UTF-8"); // 한글 파일명인 경우 인코딩 필수
+//        response 헤더에 파일 다운로드 정보 설정
+//        따로 함수가 없는 경우에는 setHeader 함수에 정보를 설정해줘야 한다
         response.setHeader("Content-disposition", "attachment;filename=\"" + filename + "\"");
+//        response의 형태를 알수 없기 때문에 OutputStream 사용
         try(OutputStream os = response.getOutputStream();
             BufferedOutputStream bos = new BufferedOutputStream(os)) {
+//            원본 파일을 스트림으로 전송(복사)
             Files.copy(Paths.get(file.getPath()), bos);
         }
     }

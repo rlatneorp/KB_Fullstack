@@ -55,14 +55,18 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public BoardDTO update(BoardDTO board) {
         log.info("update......" + board);
+//        mapper의 update를 호출해서 행 수정
         mapper.update(board.toVo());
+//        바뀐 행을 가져와서 DTO로 변환
         return get(board.getNo());
     }
 
     @Override
     public BoardDTO delete(Long no) {
         log.info("delete...." + no);
+//        delete는 삭제전에 DTO를 저장해야한다
         BoardDTO board = get(no);
+//        해당 no를 가지고 있는 데이터 삭제
         mapper.delete(no);
         return board;
     }
@@ -81,7 +85,7 @@ public class BoardServiceImpl implements BoardService {
         if(files != null && !files.isEmpty()) { // 첨부 파일이 있는 경우
             upload(boardVO.getNo(), files);
         }
-
+//        vo의 no에 해당하는 DTO 찾아오기
         return get(boardVO.getNo());
     }
 

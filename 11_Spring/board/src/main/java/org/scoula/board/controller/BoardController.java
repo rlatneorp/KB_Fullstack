@@ -64,10 +64,12 @@ public class BoardController {
     }
 
     @GetMapping("/download/{no}")
-    @ResponseBody // view를 사용하지 않고, 직접 내보냄
+    @ResponseBody // view를 사용하지 않고, json으로 받아올 때 주로 사용
     public void download(@PathVariable("no") Long no, HttpServletResponse response) throws Exception {
+//        받아온 번호에 해당하는 첨부 파일 가져오기
         BoardAttachmentVO attach = service.getAttachment(no);
         File file = new File(attach.getPath());
+//        해당 부분에서 실제 파일 다운로드
         UploadFiles.download(response, file, attach.getFilename());
     }
 
