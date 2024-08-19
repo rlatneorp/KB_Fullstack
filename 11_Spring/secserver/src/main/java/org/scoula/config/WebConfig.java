@@ -1,6 +1,7 @@
 package org.scoula.config;
 
 import lombok.extern.slf4j.Slf4j;
+import org.scoula.security.config.SecurityConfig;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -16,10 +17,6 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
     final long MAX_REQUEST_SIZE = 1024 * 1024 * 20L;
     final int FILE_SIZE_THRESHOLD = 1024 * 1024 * 5;;
 
-    @Override
-    protected Class<?>[] getRootConfigClasses() {
-        return new Class[] {RootConfig.class};
-    }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
@@ -51,5 +48,10 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
                 FILE_SIZE_THRESHOLD // 메모리 파일의 최대 크기(이보다 작으면 실제 메모리에서만 작업)
         );
         registration.setMultipartConfig(multipartConfig);
+    }
+
+    @Override
+    public Class<?>[] getRootConfigClasses() {
+        return new Class[] { RootConfig.class, SecurityConfig.class };
     }
 }
