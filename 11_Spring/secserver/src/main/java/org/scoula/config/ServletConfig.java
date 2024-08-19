@@ -14,8 +14,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @ComponentScan(basePackages = {"org.scoula.controller",
                                "org.scoula.exception",
-                               "org.scoula.board.controller",
-                               "org.scoula.weather.controller"}) // 경로에 따라 다름
+                               }) // 경로에 따라 다름
 public class ServletConfig implements WebMvcConfigurer {
 
     @Override
