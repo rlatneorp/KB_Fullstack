@@ -12,9 +12,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -61,34 +63,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        // 경로별 접근 권한 설정
-        http.authorizeRequests()
-                // '/security/all' 경로는 모든 사용자에게 접근 허용
-                .antMatchers("/org/scoula/mapper/security/all").permitAll()
-                // '/security/admin' 경로는 ADMIN 권한이 있는 사용자만 접근 가능
-                .antMatchers("/org/scoula/mapper/security/admin").access("hasRole('ADMIN')")
-                // '/security/member' 경로는 MEMBER 권한이 있는 사용자만 접근 가능
-                .antMatchers("/org/scoula/mapper/security/member").access("hasRole('MEMBER')");
+    public void configure(HttpSecurity http) throws Exception {
+        // 한글 인코딩 필터 설정
+        http.addFilterBefore(encodingFilter(), CsrfFilter.class);
 
-        // form 기반 로그인 활성화, 나머지 설정은 디폴트값 사용
-        http.formLogin()
-                .loginPage("/org/scoula/mapper/security/login")  // 로그인 페이지 GET 요청시
-                .loginProcessingUrl("/org/scoula/mapper/security/login") // 로그인 페이지의 form에서 제출 시 (action)
-                .defaultSuccessUrl("/"); //로그인 성공시 리다이렉트 페이지
-
-        http.logout()
-                .logoutUrl("/org/scoula/mapper/security/logout") // POST 요청시 호출할 url
-                .invalidateHttpSession(true) // 세션 초기화
-                // remeber-me : 브라우저 종료 시 기억하게 하는 기능(따로 설정 필요)
-                .deleteCookies("remember-me","JSESSION-ID") // 사용하고 있던 쿠키 삭제
-                .logoutSuccessUrl("/org/scoula/mapper/security/logout"); // GET 요청시 이동할 페이지
-
-        // addFilterBefore 메서드를 사용하여 CharacterEncodingFilter를 CsrfFilter 이전에 추가
-        // 이 설정은 모든 요청에 대해 UTF-8 인코딩 적용 후에 CSRF 보호가 이루어지도록 함
-//        http.addFilterBefore(encodingFilter(), CsrfFilter.class);
-//        super.configure(http);
+        http.httpBasic().disable() // 기본 HTTP 인증 비활성화
+                .csrf().disable() // CSRF 비활성화
+                .formLogin().disable() // formLogin 비활성화 관련 필터 해제
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // 세션 생성 모드 설정
     }
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
