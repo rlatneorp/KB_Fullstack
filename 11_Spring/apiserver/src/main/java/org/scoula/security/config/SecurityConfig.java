@@ -73,15 +73,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // 세션 생성 모드 설정
     }
 
-
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         log.info("configure ...................................");
 
 //        메모리 정보 대신 UserDetailsService를 사용해서 인증 처리하도록 설정
         auth
-                .userDetailsService(userDetailsService) // 사용자 정보 로드
-                .passwordEncoder(passwordEncoder()); // 비밀번호 암호화
+            .userDetailsService(userDetailsService) // 사용자 정보 로드
+            .passwordEncoder(passwordEncoder()); // 비밀번호 암호화
 
         // 메모리 내에 인증 설정
         // ROLE_ADMIN
@@ -108,7 +107,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         encodingFilter.setForceEncoding(true);
         // 생성된 필터를 반환
         return encodingFilter;
-
-
     }
 }
