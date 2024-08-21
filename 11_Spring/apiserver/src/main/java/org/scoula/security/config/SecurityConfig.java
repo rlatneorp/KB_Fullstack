@@ -65,7 +65,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new CorsFilter(source);
     }
 
-    // 접근 제한 무시 경로 설정 – resource
+//    접근 제한 무시 경로 설정 – resource
 //    특정 경로에 대한 보안 필터를 적용하지 않도록 설정
     @Override
     public void configure(WebSecurity web) throws Exception {
