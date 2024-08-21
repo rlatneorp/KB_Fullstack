@@ -44,15 +44,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     // cross origin 접근 허용
+    // 다양한 도메인에서 서버에 요청을 보낼 수 있다
     @Bean
     public CorsFilter corsFilter() {
+//        CORS 설정을 적용할 URL 소스 생성
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        CORS 설정을 위한 객체 생성
         CorsConfiguration config = new CorsConfiguration();
+//        자격 증명(쿠키,인증 헤더 등)을 포함한 요청을 허용하도록 설정
         config.setAllowCredentials(true);
+//        모든 도메인에서 오는 요청 허용 (("*")은 모두라는 의미)
         config.addAllowedOriginPattern("*");
+//        모든 헤더 허용
         config.addAllowedHeader("*");
+//        모든 HTTP 메서드 허용 (GET, POST, PUT, DELETE)
         config.addAllowedMethod("*");
+//        설정된 CORS 구성을 모든 경로("/**")에 적용 (하위 경로 포함)
         source.registerCorsConfiguration("/**", config);
+//        설정된 소스 기반으로 새로운 CorsFilter 반환
         return new CorsFilter(source);
     }
 
@@ -81,21 +90,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth
             .userDetailsService(userDetailsService) // 사용자 정보 로드
             .passwordEncoder(passwordEncoder()); // 비밀번호 암호화
-
-        // 메모리 내에 인증 설정
-        // ROLE_ADMIN
-//        auth.inMemoryAuthentication()
-//                .withUser("admin") //  사용자 이름 설정
-////                .password("{noop}1234")  // 사용자 비밀번호 설정(noop(no operation) : 암호화 미적용)
-//                .password("$2a$10$od8KUyLyTf6I0HZYdiRW8Oapc9tsO.kbrB/C7SymXQtX.iBLHhhwa")
-//                .roles("ADMIN", "MEMBER"); // ADMIN과 MEMBER 역할 모두 소유
-
-//        ROLE_MEMBER
-//        auth.inMemoryAuthentication()
-//                .withUser("member")
-////                .password("{noop}1234")
-//                .password("$2a$10$uzC12yFYGHTEJpsnAOYTQOGHBTlF.zBqBeoAlurNq3K9SF6e8x8Jm")
-//                .roles("MEMBER"); // MEMBER 역할만 부여
     }
 
     public CharacterEncodingFilter encodingFilter() {
