@@ -48,5 +48,4 @@ class RootConfigTest {
             fail(e.getMessage());
         }
     }
-
 }
