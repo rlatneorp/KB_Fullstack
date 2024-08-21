@@ -29,7 +29,7 @@ class JwtProcessorTest {
     @Test // 토큰에서 사용자 이름 추출 테스트
     void getUsername() {
         String token =
-                "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTcyNDIxMDU1NywiZXhwIjoxNzI0MjEwODU3fQ.kAcFeR4_65D_0_x8ZA9nT7OJmW8nRO4C0mesRB8Dw88mWNT4UMSCIA_CikDegssI";
+                "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTcyNDIyNDk2MywiZXhwIjoxNzI0MjI1MjYzfQ.VQe81sHwqyH9D2K9iRV0sUcAs1NKbsk0-DJlM6ZOyQSmz7GlK_Yr2djM86sNatt7";
         String username = jwtProcessor.getUsername(token); // jwt 토큰에서 사용자 이름 추출
         log.info(username);
         assertNotNull(username); // 사용자 이름이 null이 아닌지 확인
@@ -39,7 +39,7 @@ class JwtProcessorTest {
     void validateToken() {
     // 5분 경과 후 테스트
         String token =
-                "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTcyNDIxMDU1NywiZXhwIjoxNzI0MjEwODU3fQ.kAcFeR4_65D_0_x8ZA9nT7OJmW8nRO4C0mesRB8Dw88mWNT4UMSCIA_CikDegssI";
+                "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTcyNDIyNDk2MywiZXhwIjoxNzI0MjI1MjYzfQ.VQe81sHwqyH9D2K9iRV0sUcAs1NKbsk0-DJlM6ZOyQSmz7GlK_Yr2djM86sNatt7";
         boolean isValid = jwtProcessor.validateToken(token); // 5분 경과 후면 예외 발생
         log.info(isValid);
         assertTrue(isValid); // 5분전이면 true
