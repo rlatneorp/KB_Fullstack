@@ -23,7 +23,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 //        사용자 정보가 존재하지 않으면 예외 발생
         if(vo == null) {
-            throw new UsernameNotFoundException(username+"은 없는 id입니다.");
+            throw new UsernameNotFoundException(username + "은 없는 id입니다.");
         }
 
         return new CustomUser(vo);
