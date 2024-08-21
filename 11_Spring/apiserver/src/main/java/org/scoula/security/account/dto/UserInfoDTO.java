@@ -21,7 +21,7 @@ public class UserInfoDTO{
                 member.getUsername(),
                 member.getEmail(),
                 member.getAuthList().stream()
-                        .map(a-> a.getAuth())
-                        .toList());
+                        .map(a -> a.getAuth()) // 각 AuthVO 객체에서 auth 값만 추출
+                        .toList()); // 추출한 권한 목록을 리스트로 변환
     }
 }

@@ -22,7 +22,7 @@ public class CommonExceptionAdvice {
 
     //    NoHandlerFoundException 예외를 처리해주겠다
     @ExceptionHandler(NoHandlerFoundException.class)
-//    HTTP 상태 코드를 404로 설정하겠다
+    //    HTTP 상태 코드를 404로 설정하겠다
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public String handle404(NoHandlerFoundException e){
         return "custom404";
