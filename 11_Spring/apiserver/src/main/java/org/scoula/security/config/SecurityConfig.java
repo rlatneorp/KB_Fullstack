@@ -66,8 +66,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     // 접근 제한 무시 경로 설정 – resource
+//    특정 경로에 대한 보안 필터를 적용하지 않도록 설정
     @Override
     public void configure(WebSecurity web) throws Exception {
+//        해당 경로들은 보안 경로 무시
         web.ignoring().antMatchers("/assets/**", "/*", "/api/member/**");
     }
 
@@ -77,9 +79,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.addFilterBefore(encodingFilter(), CsrfFilter.class);
 
         http.httpBasic().disable() // 기본 HTTP 인증 비활성화
-                .csrf().disable() // CSRF 비활성화
-                .formLogin().disable() // formLogin 비활성화 관련 필터 해제
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // 세션 생성 모드 설정
+            .csrf().disable() // CSRF 비활성화
+            .formLogin().disable() // formLogin 비활성화 관련 필터 해제
+             // 세션 생성 모드 설정 (stateless : 세션 사용 안함)
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     @Override
