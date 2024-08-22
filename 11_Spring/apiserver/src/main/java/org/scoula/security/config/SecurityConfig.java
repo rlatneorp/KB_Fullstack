@@ -36,13 +36,13 @@ import org.springframework.web.filter.CorsFilter;
 @ComponentScan(basePackages = {"org.scoula.security"})
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    private final CustomAccessDeniedHandler accessDeniedHandler;
-    private final CustomAuthenticationEntryPoint authenticationEntryPoint;
     private final UserDetailsService userDetailsService;
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
     @Autowired
     private JwtUsernamePasswordAuthenticationFilter jwtUsernamePasswordAuthenticationFilter;
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final AuthenticationErrorFilter authenticationErrorFilter;
+    private final CustomAccessDeniedHandler accessDeniedHandler;
+    private final CustomAuthenticationEntryPoint authenticationEntryPoint;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -96,18 +96,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .addFilterBefore(jwtUsernamePasswordAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         //예외 처리 설정
         http.exceptionHandling()
-                .authenticationEntryPoint(authenticationEntryPoint)
-                .accessDeniedHandler(accessDeniedHandler);
+                .authenticationEntryPoint(authenticationEntryPoint) // 인증 실패 시 처리할 객체
+                .accessDeniedHandler(accessDeniedHandler); // 접근 거부 시 처리할 객체
         http.httpBasic().disable() // 기본 HTTP 인증 비활성화
                 .csrf().disable() // CSRF 비활성화
                 .formLogin().disable() //formLogin 비활성화
                 // 세션 생성 모드 설정 ( stateless : 세션 사용 안하겠다)
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests() // 경로별 접근 권한 설정
-                .antMatchers(HttpMethod.OPTIONS).permitAll()
-                .antMatchers("/api/security/all").permitAll() // 모두 허용
-                .antMatchers("/api/security/member").access("hasRole('ROLE_MEMBER')") // ROLE_MEMBER 이상 접근 허용
-                .antMatchers("/api/security/admin").access("hasRole('ROLE_ADMIN')") // ROLE_ADMIN 이상 접근 허용
+                .antMatchers(HttpMethod.OPTIONS).permitAll() // 모든 Options 요청 허용
+                .antMatchers("/api/security/all").permitAll() // 요청 모두 허용
+                .antMatchers("/api/security/member").access("hasRole('ROLE_MEMBER')") // MEMBER 권한 이상 접근 허용
+                .antMatchers("/api/security/admin").access("hasRole('ROLE_ADMIN')") // ADMIN 권한 이상 접근 허용
                 .anyRequest().authenticated(); // 나머지는 로그인 된 경우 모두 허용
     }
 

@@ -21,7 +21,7 @@ public class SecurityController {
         return ResponseEntity.ok("All can access");
     }
 
-    //    name 추출 방법들.
+    // name 추출 방법들 Authentication 사용.
     @GetMapping("/member")
     public ResponseEntity<String> doMember(Authentication authentication) {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
@@ -36,11 +36,6 @@ public class SecurityController {
         log.info("username = " + member);
         return ResponseEntity.ok(member);
     }
-
-//    @GetMapping("/admin")
-//    public void doAdmin() {
-//        log.info("doAdmin");
-//    }
 
     @GetMapping("/login")
     public void login() {

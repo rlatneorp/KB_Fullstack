@@ -22,11 +22,5 @@
             <input type="submit" value="로그아웃"/>
         </form>
     </sec:authorize>
-
-    <br><br>
-    <a href="/security/admin">어드민 페이지</a>
-    <a href="/security/member">멤버 페이지</a>
-    <a href="/security/all">공용 페이지</a>
-
 </body>
 </html>
