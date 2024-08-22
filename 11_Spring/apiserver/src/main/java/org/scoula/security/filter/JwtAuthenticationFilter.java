@@ -26,6 +26,7 @@ import java.io.IOException;
 @Component
 @Slf4j
 @RequiredArgsConstructor
+//요청당 한번만 필터가 동작하도록 OncePerRequestFilter 상속
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     public static final String AUTHORIZATION_HEADER = "Authorization";
