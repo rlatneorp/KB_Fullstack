@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 public class CustomUserDetailsService implements UserDetailsService {
 
     private final UserDetailsMapper mapper;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 //        mapper.xml의 sql문이 실행되면서 username에 해당하는 사용자 정보 가져오기
