@@ -28,7 +28,7 @@
     <logger name="org.springframework.web.servlet.HandlerMapping">
         <level value="debug"/>
     </logger>
-<!--로그 레벨 설정-->
+    <!--로그 레벨 설정-->
     <logger name="jdbc.audit">
         <level value="warn"/>
     </logger>
@@ -41,7 +41,7 @@
     <logger name="jdbc.sqlonly">
         <level value="info"/>
     </logger>
-<!--    -->
+    <!--    -->
     <!--  Root Logger  -->
     <root>
         <priority value="info"/>

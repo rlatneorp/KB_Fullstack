@@ -12,36 +12,37 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {RootConfig.class, SecurityConfig.class})
+@ContextConfiguration(classes = { RootConfig.class, SecurityConfig.class })
 @Log4j
 class JwtProcessorTest {
     @Autowired
     JwtProcessor jwtProcessor;
 
-    @Test
+    @Test // 토큰 생성 테스트
     void generateToken() {
-        // JWT 토큰 생성 테스트
-        String username="user01";
-        String token = jwtProcessor.generateToken(username);
+        String username = "user0";
+        String token = jwtProcessor.generateToken(username); // jwt 토큰 생성
         log.info(token);
-        assertNotNull(token);
+        assertNotNull(token); // 토큰이 null이 아닌지 확인하여 테스트 검증
     }
 
-    @Test
+    @Test // 토큰에서 사용자 이름 추출 테스트
     void getUsername() {
-        // JWT 토큰에서 사용자 이름 추출하는 테스트
-        String token ="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMDEiLCJpYXQiOjE3MjQyMjQzNTEsImV4cCI6MTcyNDIyNDY1MX0.68HRm40u3f-1GTS3wU4Y9X39If1PsJGIYX1ktAegC9Q";
-
-        String username= jwtProcessor.getUsername(token); // 토큰에서 사용자 이름 추출.
+        String token =
+                "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTcyNDIyNDk2MywiZXhwIjoxNzI0MjI1MjYzfQ.VQe81sHwqyH9D2K9iRV0sUcAs1NKbsk0-DJlM6ZOyQSmz7GlK_Yr2djM86sNatt7";
+        String username = jwtProcessor.getUsername(token); // jwt 토큰에서 사용자 이름 추출
         log.info(username);
-        assertNotNull(username); // 사용자 이름이 null이 아닌지 확인.
+        assertNotNull(username); // 사용자 이름이 null이 아닌지 확인
     }
 
     @Test
     void validateToken() {
-        String token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMDEiLCJpYXQiOjE3MjQyMjQzNTEsImV4cCI6MTcyNDIyNDY1MX0.68HRm40u3f-1GTS3wU4Y9X39If1PsJGIYX1ktAegC9Q";
-        boolean isValid = jwtProcessor.validateToken(token);
+    // 5분 경과 후 테스트
+        String token =
+                "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ1c2VyMCIsImlhdCI6MTcyNDIyNDk2MywiZXhwIjoxNzI0MjI1MjYzfQ.VQe81sHwqyH9D2K9iRV0sUcAs1NKbsk0-DJlM6ZOyQSmz7GlK_Yr2djM86sNatt7";
+        boolean isValid = jwtProcessor.validateToken(token); // 5분 경과 후면 예외 발생
         log.info(isValid);
-        assertTrue(isValid);
+        assertTrue(isValid); // 5분전이면 true
     }
+
 }

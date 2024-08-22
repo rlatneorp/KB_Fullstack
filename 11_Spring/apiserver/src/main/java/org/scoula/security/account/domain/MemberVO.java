@@ -4,9 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.util.Date;
 import java.util.List;
 
+//member 테이블과 매칭되는 VO
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,5 +20,5 @@ public class MemberVO {
     private Date regDate;
     private Date updateDate;
 
-    private List<AuthVO> authList;
+    private List<AuthVO> authList;  // 권한 목록, join 처리 필요
 }

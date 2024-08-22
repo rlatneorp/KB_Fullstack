@@ -3,7 +3,7 @@ plugins {
     id 'war'
 }
 
-group 'org.scoula.dynamicweb'
+group 'org.scoula'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -14,12 +14,11 @@ ext {
     junitVersion = '5.9.2'
     springVersion = '5.3.37'
     lombokVersion = '1.18.30'
-
-    springSecurityVersion = '5.8.13'
+    springSecurityVersion='5.8.13'
 }
 
-sourceCompatibility = '17'
-targetCompatibility = '17'
+sourceCompatibility = '1.17'
+targetCompatibility = '1.17'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -92,5 +91,4 @@ dependencies {
 }
 
 test {
-    useJUnitPlatform()
-}
+    useJUnitPlatform()}

@@ -13,10 +13,10 @@ import java.io.IOException;
 
 @Component
 public class LoginFailureHandler implements AuthenticationFailureHandler {
+    // 인증실패시 호출되는 메소드
     @Override
-    public void onAuthenticationFailure(final HttpServletRequest request, final HttpServletResponse response,
-                                        AuthenticationException exception) throws IOException, ServletException {
-        JsonResponse.sendError(response, HttpStatus.UNAUTHORIZED, "incorrect ID / PW");
+    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
+        // JSON 형식으로 에러 메세지 전송.
+        JsonResponse.sendError(response, HttpStatus.UNAUTHORIZED, "사용자 ID 또는 비밀번호가 일치하지 않습니다.");
     }
-
 }

@@ -29,111 +29,98 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.CorsFilter;
-
 @Configuration
-@EnableWebSecurity // 모든 페이지에서 자동으로 인증을 하도록 설정.
+@EnableWebSecurity // 모든 페이지에서 자동으로 인증을 하도록 설정
 @Log4j
 @MapperScan(basePackages = {"org.scoula.security.account.mapper"})
 @ComponentScan(basePackages = {"org.scoula.security"})
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
-    private final UserDetailsService userDetailsService;
-    private final AuthenticationErrorFilter authenticationErrorFilter;
     private final CustomAccessDeniedHandler accessDeniedHandler;
     private final CustomAuthenticationEntryPoint authenticationEntryPoint;
-
+    private final UserDetailsService userDetailsService;
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
     @Autowired
     private JwtUsernamePasswordAuthenticationFilter jwtUsernamePasswordAuthenticationFilter;
-
+    private final AuthenticationErrorFilter authenticationErrorFilter;
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(); // PasswordEncoder의 구현체
     }
-
+    // AuthenticationManager 빈 등록
     @Bean
     public AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
-
+    // cross origin 접근 허용
+    // 다양한 도메인에서 서버에 요청을 보낼 수 있다
     @Bean
     public CorsFilter corsFilter() {
+//        CORS 설정을 적용할 URL 소스 생성
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        //CORS 설정을 위한 객체 생성
+        // CORS 설정을 위한 객체 생성
         CorsConfiguration config = new CorsConfiguration();
-
-        //자격 증명을 포함한 요청을 허용하도록 설정.
+        // 자격 증명(쿠키,인증 헤더 등)을 포함한 요청을 허용하도록 설정
         config.setAllowCredentials(true);
-
-        // 모든 도메인에서 오는 요청 허용.
+        // 모든 도메인에서 오는 요청 허용 (*은 모두라는 의미)
         config.addAllowedOriginPattern("*");
-
-        // 모든 헤더 허용.
+        // 모든 헤더 허용
         config.addAllowedHeader("*");
-
-        // 모든 HTTP메서드 허용
+        // 모든 HTTP 메서드 허용(GET, POST, PUT, DELETE)
         config.addAllowedMethod("*");
-
-        // 설정된 CORS 구성을 모든 경로("/**")에 적용
+        // 설정된 CORS 구성을 모든 경로("/**")에 적용 (하위 경로 포함)
         source.registerCorsConfiguration("/**", config);
-
-        // 설정된 소스 기반으로 새로운 corsfilter 반환.
+        // 설정된 소스 기반으로 새로운 CorsFilter 반환
         return new CorsFilter(source);
     }
-
-    // 특정 경로에 대한 보안 필터 적용 해제.
+    // 특정 경로에 대한 보안 필터를 적용하지 않도록 설정
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/assets/**", "/*", "/api/member/**");
-        // 뒤에 있는 경로들은 보안 검사를 무시한다.
+//        해당 경로들은 보안 검사 무시
+        web.ignoring().antMatchers("/assets/**","/*","/api/member/**");
     }
-
-    public CharacterEncodingFilter encodingFilter () {
-        CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
-        encodingFilter.setEncoding("UTF-8");
-        encodingFilter.setForceEncoding(true);
-        return encodingFilter;
-    }
-
     @Override
     public void configure(HttpSecurity http) throws Exception {
-
+        // 한글 인코딩 필터 설정
         http.addFilterBefore(encodingFilter(), CsrfFilter.class)
                 // 인증 에러 필터
                 .addFilterBefore(authenticationErrorFilter, UsernamePasswordAuthenticationFilter.class)
-        // addfilterbefore 메서드를 사용하여 characterencodingfilter를 csrffilter 이전에 추가.
-        // 이 설정은 모든 요청에 대해 utf-8 인코딩 적용 후에 csrf 보호가 이루어지도록 함.
-                // 로그인 인증 필터.
+                // Jwt 인증 필터
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                // 로그인 인증 필터
                 .addFilterBefore(jwtUsernamePasswordAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
-
-        http.exceptionHandling()
-            .authenticationEntryPoint(authenticationEntryPoint)
-            .accessDeniedHandler(accessDeniedHandler);
-
-        http.httpBasic().disable() //기본 http인증 비활성화
-                        .csrf().disable() // csrf 비활성화
-                        .formLogin().disable() // formLogin 비활성화, 관련필터 해제
-                        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-                        // 세션 생성 모드 설정. (stateless = 세션 사용 안하겠다.)
+        //예외 처리 설정
         http
-            .authorizeRequests()
-            .antMatchers(HttpMethod.OPTIONS).permitAll()
-            .antMatchers("/api/security/all").permitAll()
-            .antMatchers("/api/security/member").access("hasRole('ROLE_MEMBER')")
-            .antMatchers("/api/security/admin").access("hasRole('ROLE_ADMIN')")
-            .anyRequest().authenticated();
+                .exceptionHandling()
+                .authenticationEntryPoint(authenticationEntryPoint)
+                .accessDeniedHandler(accessDeniedHandler);
+        http.httpBasic().disable() // 기본 HTTP 인증 비활성화
+                .csrf().disable() // CSRF 비활성화
+                .formLogin().disable() //formLogin 비활성화
+                // 세션 생성 모드 설정 ( stateless : 세션 사용 안하겠다)
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http
+                .authorizeRequests() // 경로별 접근 권한 설정
+                .antMatchers(HttpMethod.OPTIONS).permitAll()
+                .antMatchers("/api/security/all").permitAll() // 모두 허용
+                .antMatchers("/api/security/member").access("hasRole('ROLE_MEMBER')") // ROLE_MEMBER 이상 접근 허용
+                .antMatchers("/api/security/admin").access("hasRole('ROLE_ADMIN')") // ROLE_ADMIN 이상 접근 허용
+                .anyRequest().authenticated(); // 나머지는 로그인 된 경우 모두 허용
     }
-
-
     @Override
-    protected void configure(AuthenticationManagerBuilder auth)
-            throws Exception {
-        log.info("configure.......................");
-        //메모리 정보 대신 userDetailsService를 사용해 인증 처리하도록 설정.
-        auth.userDetailsService(userDetailsService)
-                .passwordEncoder(passwordEncoder());
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        메모리 정보 대신 UserDetailsService를 사용해서 인증 처리하도록 설정
+        auth
+                .userDetailsService(userDetailsService) // 사용자 정보 로드
+                .passwordEncoder(passwordEncoder()); // 비밀번호 암호화
+    }
+    public CharacterEncodingFilter encodingFilter() {
+        CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
+        // UTF-8 인코딩을 설정합니다.
+        encodingFilter.setEncoding("UTF-8");
+        // 강제로 UTF-8 인코딩을 적용하도록 설정
+        encodingFilter.setForceEncoding(true);
+        // 생성된 필터를 반환
+        return encodingFilter;
     }
 }
-

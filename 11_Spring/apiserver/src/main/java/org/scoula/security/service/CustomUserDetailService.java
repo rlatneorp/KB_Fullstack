@@ -20,7 +20,7 @@ public class CustomUserDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // mapper.xml의 sql문이 실행되며 username에 해당하는 정보 가져오기
         MemberVO vo = mapper.get(username);
-
+        log.info(vo);
         // 사용자 정보가 존재하지 않으면 예외 발생
         if(vo == null) {
             throw new UsernameNotFoundException(username);

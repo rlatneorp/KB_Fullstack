@@ -13,31 +13,31 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @ComponentScan(basePackages = {"org.scoula.controller",
-        "org.scoula.controller",
-        "org.scoula.exception"})
+                               "org.scoula.exception"}) // 경로에 따라 다름
 public class ServletConfig implements WebMvcConfigurer {
+
     @Override
-    public void addResourceHandlers
-            (ResourceHandlerRegistry registry) {
-        //url이 /resources로 시작하는 모든 경로
-        registry.addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/");
-//              webapp/resources/ 경로로 매핑
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry
+             .addResourceHandler("/resources/**")
+             .addResourceLocations("/resources/");
     }
+
+    // jsp view resolver 설정
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         InternalResourceViewResolver bean = new InternalResourceViewResolver();
 
         bean.setViewClass(JstlView.class);
-        bean.setPrefix("/WEB-INF/views/");
+        bean.setPrefix("/WEB-INF/views/"); // 경로에 따라 다름
         bean.setSuffix(".jsp");
 
         registry.viewResolver(bean);
     }
 
     @Bean
-    public MultipartResolver multipartResolver() {
+    public MultipartResolver multipartResolver(){
         StandardServletMultipartResolver resolver
                 = new StandardServletMultipartResolver();
         return resolver;
