@@ -1,27 +1,32 @@
-<!DOCTYPE html>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
-<html lang="ko">
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
+
+<!DOCTYPE>
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset ="UTF-8">
     <title>Title</title>
 </head>
 <body>
     <h1>환영합니다.</h1>
-
-<%--    isAnonymous:로그인이 안된 경우 true, 로그아웃되어있는 상태를 의미함--%>
-    <sec:authorize access="isAnonymous()"> <!-- 로그인 안한 경우 -->
-        <a href="/security/login">로그인</a>
+    <sec:authorize access="isAnonymous()">
+        <a href="/security/login">로그인 페이지</a>
     </sec:authorize>
 
-<%--    isAuthenticated :로그인이 된 경우 true, 로그인 되어있는 상태를 의미함--%>
-    <sec:authorize access="isAuthenticated()"> <!-- 로그인한 경우 -->
+    <sec:authorize access="isAuthenticated()">
         <sec:authentication property="principal.username"/>
         <form action="/security/logout" method="post">
-<%--            _csrf.token : 아무나 post요청 못하게 하려고--%>
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" value="로그아웃"/>
         </form>
     </sec:authorize>
+
+    <br><br>
+    <a href="/security/admin">어드민 페이지</a>
+    <a href="/security/member">멤버 페이지</a>
+    <a href="/security/all">공용 페이지</a>
+
 </body>
 </html>

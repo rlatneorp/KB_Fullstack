@@ -30,12 +30,12 @@ create table tbl_member_auth
 -- 테스트 사용자 추가
 insert into tbl_member(username, password, email)
 values
-    ('admin', '$2a$10$od8KUyLyTf6I0HZYdiRW8Oapc9tsO.kbrB/C7SymXQtX.iBLHhhwa', 'admin@galapgos.org'),
-    ('user0', '$2a$10$od8KUyLyTf6I0HZYdiRW8Oapc9tsO.kbrB/C7SymXQtX.iBLHhhwa', 'user0@galapgos.org'),
-    ('user1', '$2a$10$od8KUyLyTf6I0HZYdiRW8Oapc9tsO.kbrB/C7SymXQtX.iBLHhhwa', 'user1@galapgos.org'),
-    ('user2', '$2a$10$od8KUyLyTf6I0HZYdiRW8Oapc9tsO.kbrB/C7SymXQtX.iBLHhhwa', 'user2@galapgos.org'),
-    ('user3', '$2a$10$od8KUyLyTf6I0HZYdiRW8Oapc9tsO.kbrB/C7SymXQtX.iBLHhhwa', 'user3@galapgos.org'),
-    ('user4', '$2a$10$od8KUyLyTf6I0HZYdiRW8Oapc9tsO.kbrB/C7SymXQtX.iBLHhhwa', 'user4@galapgos.org');
+    ('admin', '$2a$10$Et4lZJlaF7Y2MBvQuQazZeJaeI39eyo9eOerNta50Gk//LVyN2vUW', 'admin@galapgos.org'),
+    ('user0', '$2a$10$Et4lZJlaF7Y2MBvQuQazZeJaeI39eyo9eOerNta50Gk//LVyN2vUW', 'user0@galapgos.org'),
+    ('user1', '$2a$10$Et4lZJlaF7Y2MBvQuQazZeJaeI39eyo9eOerNta50Gk//LVyN2vUW', 'user1@galapgos.org'),
+    ('user2', '$2a$10$Et4lZJlaF7Y2MBvQuQazZeJaeI39eyo9eOerNta50Gk//LVyN2vUW', 'user2@galapgos.org'),
+    ('user3', '$2a$10$Et4lZJlaF7Y2MBvQuQazZeJaeI39eyo9eOerNta50Gk//LVyN2vUW', 'user3@galapgos.org'),
+    ('user4', '$2a$10$Et4lZJlaF7Y2MBvQuQazZeJaeI39eyo9eOerNta50Gk//LVyN2vUW', 'user4@galapgos.org');
 
 select * from tbl_member;
 

@@ -1,18 +1,25 @@
-<!DOCTYPE html>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" import="java.util.*"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <html>
+<%--http://localhost:8080/sample/ex04?name=aaa&age=11--%>
+<%--예외 강제 발생.--%>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Insert title here</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
 </head>
 <body>
-   <h4><c:out value="${exception.getMessage()}"></c:out></h4>
+    <h4>
+        <c:out value="${exception.getMessage()}"></c:out>
+    </h4>
+
     <ul>
-        <c:forEach items="${exception.getStackTrace() }" var="stack">
-            <li><c:out value="${stack}"></c:out></li>
+        <c:forEach items="${exception.getStackTrace()}" var="stack">
+            <li>
+                <c:out value="${stack}"></c:out>
+            </li>
         </c:forEach>
-   </ul>
+    </ul>
 </body>
 </html>

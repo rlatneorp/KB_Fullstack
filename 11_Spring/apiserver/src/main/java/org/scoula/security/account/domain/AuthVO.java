@@ -3,16 +3,15 @@ package org.scoula.security.account.domain;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 
-//member_auth 테이블과 매칭되는 VO
 @Data
 public class AuthVO implements GrantedAuthority {
+    // grantedauthority는 인터페이스, 권한을 가져오는 인터페이스.
     private String username;
     private String auth;
 
     @Override
     public String getAuthority() {
-//        권한 정보만 추출해주는 메소드
+        // 권한정보만 추출하는 메서드.
         return auth;
     }
-
 }
