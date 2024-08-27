@@ -20,10 +20,9 @@
 
     <select id="get" resultMap="memberMap">
         SELECT m.username, password, email, reg_date, update_date, auth
-        FROM
-        tbl_member m
-        LEFT OUTER JOIN tbl_member_auth a
-        ON m.username = a.username
+        FROM tbl_member m
+            LEFT OUTER JOIN tbl_member_auth a
+                        ON m.username = a.username
         where m.username = #{username}
     </select>
 

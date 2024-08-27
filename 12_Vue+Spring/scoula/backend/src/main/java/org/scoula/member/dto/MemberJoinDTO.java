@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+//회원 가입시 사용자가 직접 입력하는 정보
 public class MemberJoinDTO {
     String username;
     String password;
