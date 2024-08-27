@@ -22,30 +22,31 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
-    final PasswordEncoder passwordEncoder;
-    final MemberMapper mapper;
+    final PasswordEncoder passwordEncoder; // 비밀번호 암호화 인코더
+    final MemberMapper mapper; // DB 접근을 위한 매퍼
 
     @Override
     public boolean checkDuplicate(String username) {
-        MemberVO member = mapper.findByUsername(username);
-        return member != null ? true : false;
+        MemberVO member = mapper.findByUsername(username); // 주어진 사용자 이름으로 회원정보 조회
+        return member != null ? true : false; // 이미 있는 사용자라면 true 반환(중복 여부 반환)
     }
 
     @Override
     public MemberDTO get(String username) {
+//        주어진 사용자 이름으로 회원 정보 조회, 없으면 예외 발생
         MemberVO member = Optional.ofNullable(mapper.get(username))
                 .orElseThrow(NoSuchElementException::new);
-        return MemberDTO.of(member);
+        return MemberDTO.of(member); // 회원 정보를 DTO로 변환하여 반환
     }
 
+    // 아바타 이미지 업로드
     private void saveAvatar(MultipartFile avatar, String username) {
-        //아바타 업로드
-        if(avatar != null && !avatar.isEmpty()) {
-            File dest = new File("c:/upload/avatar", username + ".png");
+        if(avatar != null && !avatar.isEmpty()) { // 아바타가 존재하는 경우에만 조건문 실행
+            File dest = new File("c:/upload/avatar", username + ".png"); // 저장할 경로 설정
             try {
                 avatar.transferTo(dest);
-            } catch ( IOException e) {
-                throw new RuntimeException(e);
+            } catch (IOException e) {
+                throw new RuntimeException(e); // 오류 발생 시 런타임 예외로 발생시킴
             }
         }
     }
