@@ -51,3 +51,96 @@ const join = async () => {
   }
 };
 </script>
+
+<template>
+  <div class="mt-5 mx-auto" style="width: 500px">
+    <h1 class="my-5">
+      <i class="fa-solid fa-user-plus"></i>
+      회원 가입
+    </h1>
+    <form @submit.prevent="join">
+      <div class="mb-3 mt-3">
+        <label for="username" class="form-label">
+          <i class="fa-solid fa-user"></i>
+          사용자 ID :
+          <button
+            type="button"
+            class="btn btn-success btn-sm py-0 me-2"
+            @click="checkUsername"
+          >
+            ID 중복 확인
+          </button>
+          <span :class="disableSubmit.value ? 'text-primary' : 'text-danger'">{{
+            checkError
+          }}</span>
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="사용자 ID"
+          id="username"
+          @input="changeUsername"
+          v-model="member.username"
+        />
+      </div>
+      <div>
+        <label for="avatar" class="form-label">
+          <i class="fa-solid fa-user-astronaut"></i>
+          아바타 이미지:
+        </label>
+        <input
+          type="file"
+          class="form-control"
+          ref="avatar"
+          id="avatar"
+          accept="image/png, image/jpeg"
+        />
+      </div>
+      <div class="mb-3 mt-3">
+        <label for="email" class="form-label">
+          <i class="fa-solid fa-envelope"></i>
+          email
+        </label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Email"
+          id="email"
+          v-model="member.email"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">
+          <i class="fa-solid fa-lock"></i> 비밀번호:
+        </label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="비밀번호"
+          id="password"
+          v-model="member.password"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">
+          <i class="fa-solid fa-lock"></i> 비밀번호 확인:
+        </label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="비밀번호 확인"
+          id="password2"
+          v-model="member.password2"
+        />
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary mt-4"
+        :disabled="disableSubmit"
+      >
+        <i class="fa-solid fa-user-plus"></i>
+        확인
+      </button>
+    </form>
+  </div>
+</template>
