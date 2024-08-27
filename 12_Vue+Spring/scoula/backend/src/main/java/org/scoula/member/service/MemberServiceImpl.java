@@ -44,7 +44,7 @@ public class MemberServiceImpl implements MemberService {
         if(avatar != null && !avatar.isEmpty()) { // 아바타가 존재하는 경우에만 조건문 실행
             File dest = new File("c:/upload/avatar", username + ".png"); // 저장할 경로 설정
             try {
-                avatar.transferTo(dest);
+                avatar.transferTo(dest); // transferTo 해당 경로에 파일 저장
             } catch (IOException e) {
                 throw new RuntimeException(e); // 오류 발생 시 런타임 예외로 발생시킴
             }
@@ -54,18 +54,20 @@ public class MemberServiceImpl implements MemberService {
     @Transactional
     @Override
     public MemberDTO join(MemberJoinDTO dto) {
-        MemberVO member = dto.toVO();
+        MemberVO member = dto.toVO(); // DTO를 VO로 변환
 
         member.setPassword(passwordEncoder.encode(member.getPassword())); // 비밀번호 암호화
-        mapper.insert(member);
+        mapper.insert(member); // 테이블쪽에 회원 정보 저장
 
+        // 기본 회원 권한 설정 저장
         AuthVO auth = new AuthVO();
         auth.setUsername(member.getUsername());
         auth.setAuth("ROLE_MEMBER");
-        mapper.insertAuth(auth);
+        mapper.insertAuth(auth); // 테이블쪽에 권한 정보 저장
 
+        // 해당 유저의 아바타 이미지 저장
         saveAvatar(dto.getAvatar(), member.getUsername());
-
+        // 저장된 회원 정보 반환
         return get(member.getUsername());
     }
 }
