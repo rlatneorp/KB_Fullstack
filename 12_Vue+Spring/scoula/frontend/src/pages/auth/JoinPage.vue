@@ -15,18 +15,21 @@ const member = reactive({
   password2: '12',
   avatar: null,
 });
+
 const disableSubmit = ref(true);
 // username 중복 체크
 const checkUsername = async () => {
   if (!member.username) {
     return alert('사용자 ID를 입력하세요.');
   }
+
   disableSubmit.value = await authApi.checkUsername(member.username);
   console.log(disableSubmit.value, typeof disableSubmit.value);
   checkError.value = disableSubmit.value
     ? '이미 사용중인 ID입니다.'
     : '사용가능한 ID입니다.';
 };
+
 // username 입력 핸들러
 const changeUsername = () => {
   disableSubmit.value = true;
@@ -36,13 +39,16 @@ const changeUsername = () => {
     checkError.value = '';
   }
 };
+
 const join = async () => {
   if (member.password != member.password2) {
     return alert('비밀번호가 일치하지 않습니다.');
   }
+
   if (avatar.value.files.length > 0) {
     member.avatar = avatar.value.files[0];
   }
+
   try {
     await authApi.create(member); // 회원가입
     router.push({ name: 'home' }); // 회원 가입 성공 시, 첫 페이지로 이동 또는 로그인 페이지로 이동
@@ -58,6 +64,7 @@ const join = async () => {
       <i class="fa-solid fa-user-plus"></i>
       회원 가입
     </h1>
+
     <form @submit.prevent="join">
       <div class="mb-3 mt-3">
         <label for="username" class="form-label">

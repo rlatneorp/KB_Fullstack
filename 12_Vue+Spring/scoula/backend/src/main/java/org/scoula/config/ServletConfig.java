@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages = {"org.scoula.controller",
                                "org.scoula.exception",
                                 "org.scoula.board.controller",
-                                 "org.scoula.member.controller",}) // 경로에 따라 다름
+                                "org.scoula.member.controller"}) // 경로에 따라 다름
 public class ServletConfig implements WebMvcConfigurer {
 
     @Override

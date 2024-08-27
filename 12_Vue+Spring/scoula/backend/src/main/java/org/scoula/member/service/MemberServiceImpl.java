@@ -44,7 +44,7 @@ public class MemberServiceImpl implements MemberService {
             File dest = new File("c:/upload/avatar", username + ".png");
             try {
                 avatar.transferTo(dest);
-            } catch (IOException e) {
+            } catch ( IOException e) {
                 throw new RuntimeException(e);
             }
         }
@@ -54,13 +54,17 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public MemberDTO join(MemberJoinDTO dto) {
         MemberVO member = dto.toVO();
+
         member.setPassword(passwordEncoder.encode(member.getPassword())); // 비밀번호 암호화
         mapper.insert(member);
+
         AuthVO auth = new AuthVO();
         auth.setUsername(member.getUsername());
         auth.setAuth("ROLE_MEMBER");
         mapper.insertAuth(auth);
+
         saveAvatar(dto.getAvatar(), member.getUsername());
+
         return get(member.getUsername());
     }
 }
