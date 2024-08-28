@@ -8,7 +8,7 @@ import config from '@/config';
 const { login, join } = config.accoutMenus;
 import { useAuthStore } from '@/stores/auth.js';
 const auth = useAuthStore();
-const islogin = computed(() => auth.isLogin);
+const islogin = computed(() => auth.isLogin); // 로그인 상태를 반응형으로 처리
 const username = computed(() => auth.username);
 </script>
 
