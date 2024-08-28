@@ -45,8 +45,10 @@ public class MemberController {
         UploadFiles.downloadImage(response, file);
     }
 
+    // 회원 프로필 변경 요청을 처리하는 메소드
     @PutMapping("/{username}")
     public ResponseEntity<MemberDTO> changeProfile(MemberUpdateDTO member) {
+//        객체를 통째로 받아서 그 안의 username을 경로 변수로 넘겨준다
         return ResponseEntity.ok(service.update(member));
     }
 }
