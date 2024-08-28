@@ -20,7 +20,9 @@ public class MemberDTO {
     private String email;
     private Date regDate;
     private Date updateDate;
+
     MultipartFile avatar;
+
     private List<String> authList; // 권한 목록, join 처리 필요
 
     // VO를 DTO로 바꿔주는 정적 메소드

@@ -2,5 +2,6 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/auth.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/org/scoula/member/mapper/MemberMapper.xml" dialect="MySQL" />
   </component>
 </project>

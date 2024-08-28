@@ -16,6 +16,7 @@ public class MemberUpdateDTO {
 
     MultipartFile avatar;
 
+//    MemberUpdateDTO -> MemberVO로 변환하는 메소드
     public MemberVO toVO() {
         return MemberVO.builder()
                 .username(username)

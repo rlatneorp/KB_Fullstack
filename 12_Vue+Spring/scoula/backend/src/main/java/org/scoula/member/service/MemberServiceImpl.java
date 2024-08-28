@@ -75,12 +75,14 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public MemberDTO update(MemberUpdateDTO member) {
+//        사용자 이름 테이블에서 조회하여 MemberVO 객체에 저장
         MemberVO vo = mapper.get(member.getUsername());
+//        암호화된 비밀번호를 비교해주기 위해서는 반드시 matches 사용 (순서중요)
         if(!passwordEncoder.matches(member.getPassword(),vo.getPassword())) { // 비밀번호 일치 확인
             throw new PasswordMissmatchException();
         }
-        mapper.update(member.toVO());
+        mapper.update(member.toVO()); // 업데이트할 정보를 DB에 반영
         saveAvatar(member.getAvatar(), member.getUsername());
-        return get(member.getUsername());
+        return get(member.getUsername()); // 업데이트된 회원 정보 반환
     }
 }
