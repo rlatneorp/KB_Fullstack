@@ -2,6 +2,8 @@ package org.scoula.member.service;
 
 import org.scoula.member.dto.MemberDTO;
 import org.scoula.member.dto.MemberJoinDTO;
+import org.scoula.member.dto.MemberUpdateDTO;
+
 public interface MemberService {
 
 //    주어진 사용자 이름이 중복되는지 체크
@@ -12,4 +14,6 @@ public interface MemberService {
 
 //    회원 가입 처리, MemberJoinDTO를 받아 회원 정보를 저장하고 저장된 회원 정보 반환
     MemberDTO join(MemberJoinDTO member);
+
+    MemberDTO update(MemberUpdateDTO member);
 }
