@@ -34,9 +34,10 @@ public class MemberController {
         return ResponseEntity.ok(service.join(member));
     }
 
+//    특정 사용자의 아바타 이미지를 가져오는 메서드
     @GetMapping("/{username}/avatar")
     public void getAvatar(@PathVariable String username, HttpServletResponse response) {
-        String avatarPath = "c:/upload/avatar/" + username + ".png";
+        String avatarPath = "c:/upload/avatar/" + username + ".png"; // 이미지 경로 생성
         File file = new File(avatarPath);
         if(!file.exists()) { // 아바타 등록이 없는 경우, 디폴트 아바타 이미지 사용
             file = new File("C:/upload/avatar/unknown.png");
@@ -48,5 +49,4 @@ public class MemberController {
     public ResponseEntity<MemberDTO> changeProfile(MemberUpdateDTO member) {
         return ResponseEntity.ok(service.update(member));
     }
-
 }
