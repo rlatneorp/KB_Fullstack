@@ -3,6 +3,7 @@ package org.scoula.member.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.scoula.member.dto.ChangePasswordDTO;
 import org.scoula.member.dto.MemberDTO;
 import org.scoula.member.dto.MemberJoinDTO;
 import org.scoula.member.dto.MemberUpdateDTO;
@@ -84,5 +85,15 @@ public class MemberServiceImpl implements MemberService {
         mapper.update(member.toVO()); // 업데이트할 정보를 DB에 반영
         saveAvatar(member.getAvatar(), member.getUsername());
         return get(member.getUsername()); // 업데이트된 회원 정보 반환
+    }
+
+    @Override
+    public void changePassword(ChangePasswordDTO changePassword) {
+        MemberVO member = mapper.get(changePassword.getUsername());
+        if(!passwordEncoder.matches(changePassword.getOldPassword(), member.getPassword())) {
+            throw new PasswordMissmatchException();
+        }
+        changePassword.setNewPassword(passwordEncoder.encode(changePassword.getNewPassword()));
+        mapper.updatePassword(changePassword);
     }
 }

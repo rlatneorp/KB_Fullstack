@@ -1,5 +1,6 @@
 package org.scoula.member.service;
 
+import org.scoula.member.dto.ChangePasswordDTO;
 import org.scoula.member.dto.MemberDTO;
 import org.scoula.member.dto.MemberJoinDTO;
 import org.scoula.member.dto.MemberUpdateDTO;
@@ -17,4 +18,7 @@ public interface MemberService {
 
 //    MemberUpdateDTO 객체 받아와서 업데이트된 회원 정보 반환
     MemberDTO update(MemberUpdateDTO member);
+
+    void changePassword(ChangePasswordDTO changePassword);
+
 }

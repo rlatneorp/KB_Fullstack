@@ -55,7 +55,11 @@ export const useAuthStore = defineStore('auth', () => {
     }
   };
 
-  load(); // 스토어가 초기화될 때 인증 정보 로드
+  const changeProfile = (member) => {
+    state.value.user.email = member.email;
+    localStorage.setItem('auth', JSON.stringify(state.value));
+  };
 
-  return { state, username, email, isLogin, login, logout, getToken };
+  load(); // 스토어가 초기화될 때 인증 정보 로드
+  return { state, username, email, isLogin, changeProfile, login, logout, getToken };
 });

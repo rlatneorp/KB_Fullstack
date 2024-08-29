@@ -3,6 +3,7 @@ package org.scoula.member.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.scoula.common.util.UploadFiles;
+import org.scoula.member.dto.ChangePasswordDTO;
 import org.scoula.member.dto.MemberDTO;
 import org.scoula.member.dto.MemberJoinDTO;
 import org.scoula.member.dto.MemberUpdateDTO;
@@ -50,5 +51,11 @@ public class MemberController {
     public ResponseEntity<MemberDTO> changeProfile(MemberUpdateDTO member) {
 //        객체를 통째로 받아서 그 안의 username을 경로 변수로 넘겨준다
         return ResponseEntity.ok(service.update(member));
+    }
+
+    @PutMapping("/{username}/changepassword")
+    public ResponseEntity<?> changePassword(@RequestBody ChangePasswordDTO changePasswordDTO) {
+        service.changePassword(changePasswordDTO);
+        return ResponseEntity.ok().build();
     }
 }
