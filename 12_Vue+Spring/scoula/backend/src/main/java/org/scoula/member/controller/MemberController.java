@@ -53,6 +53,7 @@ public class MemberController {
         return ResponseEntity.ok(service.update(member));
     }
 
+//    JSON 데이터로 넘겨주기 위해 RequestBody 사용
     @PutMapping("/{username}/changepassword")
     public ResponseEntity<?> changePassword(@RequestBody ChangePasswordDTO changePasswordDTO) {
         service.changePassword(changePasswordDTO);

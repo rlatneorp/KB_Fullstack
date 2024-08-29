@@ -24,6 +24,7 @@ const onSubmit = async () => {
     return;
   }
   try {
+    // 비밀번호 변경 요청을 백엔드(서버)로 전송
     await authApi.changePassword(changePassword);
     alert('비밀번호를 수정했습니다.');
     router.push({ name: 'profile' });

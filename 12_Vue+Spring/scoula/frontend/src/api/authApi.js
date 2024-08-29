@@ -42,6 +42,7 @@ export default {
   },
 
   async changePassword(formData) {
+     // 세번째 값을 생략하면 기본값이 JSON형태로 넘어간다
     const { data } = await api.put(`${BASE_URL}/${formData.username}/changepassword`, formData);
     console.log('AUTH PUT: ', data);
     return data;
