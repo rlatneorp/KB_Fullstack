@@ -16,23 +16,28 @@ const download = async (no) => {
   const URL = '/api/board/download/' + no;
   await downloadFile(URL);
 };
-
+// 뒤로가기 함수
 const back = () => {
   router.push({ name: 'board/list' });
 };
+// 게시글 수정
 const update = () => {
   router.push({ name: 'board/update', params: { no: no } });
 };
+// 게시글 삭제
 const remove = async () => {
   if (!confirm('삭제할까요?')) return;
   await api.delete(no);
   router.push({ name: 'board/list' });
 };
+// 게시글 불러오기
 const load = async () => {
   article.value = await api.get(no);
 };
+
 load();
 </script>
+
 <template>
   <h1>{{ article.title }}</h1>
   <div className="my-3 d-flex justify-content-between">
@@ -45,9 +50,10 @@ load();
       {{ moment(article.updateDate).format('YYYY-MM-DD HH:mm') }}
     </div>
   </div>
-  <hr />
+  <hr/>
   <!-- 첨부 파일 목록 -->
   <div class="text-end">
+<!--    게시글에 있는 첨부파일을 BoardAttachmentVO 형태로 하나씩 가져온다-->
     <div v-for="file in article.attaches" :key="file.no" class="attach">
       <span @click="download(file.no)">
         <i class="fa-solid fa-paperclip"></i>

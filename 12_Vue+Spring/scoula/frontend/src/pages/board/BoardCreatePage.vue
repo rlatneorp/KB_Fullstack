@@ -18,6 +18,7 @@ const disableSubmit = computed(() => !article.title);
 
 const submit = async () => {
   if (!confirm('등록할까요?')) return;
+  // 파일이 선택된 경우/ 게시글 객체에 파일 추가
   if (files.value.files.length > 0) { // 첨부파일 선택이 있는 경우
     article.files = files.value.files;
   }

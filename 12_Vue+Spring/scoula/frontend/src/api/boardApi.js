@@ -1,7 +1,7 @@
 import api from '@/api'; // 인터셉터 사용 (index.js)
 
 const BASE_URL = '/api/board';
-const headers = { 'Content-Type': 'multipart/form-data' };
+const headers = { 'Content-Type': 'multipart/form-data' }; // 파일업로드 하려고
 
 export default {
     async getList(params) {
@@ -16,11 +16,14 @@ export default {
         formData.append('title', article.title);
         formData.append('writer', article.writer);
         formData.append('content', article.content);
+
+        // 파일이 존재하는 경우 해당 파일의 길이만큼 돌면서 각 파일을 formData에 추가
         if (article.files) {
             for (let i = 0; i < article.files.length; i++) {
                 formData.append('files', article.files[i]);
             }
         }
+        // API로 폼 데이터를 함께 담아서 post요청
         const { data } = await api.post(BASE_URL, formData, { headers });
         console.log('BOARD POST: ', data);
         return data;

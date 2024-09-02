@@ -54,6 +54,7 @@ load();
     <div class="my-5 d-flex">
       <div class="flex-grow-1 text-center">페이지 네이션</div>
       <div>
+<!--        글 작성 페이지로 이동하는 버튼-->
         <router-link :to="{ name: 'board/create' }" class="btn btn-primary">
           <i class="fa-solid fa-pen-to-square"></i> 글 작성</router-link>
       </div>
