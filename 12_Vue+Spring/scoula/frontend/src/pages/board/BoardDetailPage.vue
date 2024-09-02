@@ -5,7 +5,6 @@ import api from '@/api/boardApi';
 import { ref } from 'vue';
 import moment from 'moment';
 import { useAuthStore } from '@/stores/auth';
-import { downloadFile } from '@/util/download';
 
 const auth = useAuthStore();
 const cr = useRoute();
