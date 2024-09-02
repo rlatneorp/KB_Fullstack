@@ -1,8 +1,11 @@
-import api from '@/api';
+import api from '@/api'; // 인터셉터 사용 (index.js)
+
 const BASE_URL = '/api/board';
 const headers = { 'Content-Type': 'multipart/form-data' };
+
 export default {
     async getList(params) {
+        // url과 params 매개변수로 서버에 요청을 보내고 data를 받아온다
         const { data } = await api.get(BASE_URL, { params });
         console.log('BOARD GET LIST: ', data);
         return data;

@@ -9,10 +9,12 @@ const router = useRouter();
 
 const page = ref({ });
 
+// page.value가 바뀌는 동시에 다시 계산된다
 const articles = computed(() => page.value);
 
 const load = async () => {
   try {
+    // API 호출을 통해서 게시판 목록을 가져와서 저장한다
     page.value = await api.getList();
     console.log(page.value);
   } catch {}
@@ -34,14 +36,17 @@ load();
       </tr>
       </thead>
       <tbody>
+<!--      article은 BoardDTO를 의미한다-->
       <tr v-for="article in articles" :key="article.no">
         <td>{{ article.no }}</td>
         <td>
+<!--          board/detail , 상세보기 페이지로 이동하면서 파라미터로 게시글의 번호를 넘겨준다-->
           <router-link :to="{ name: 'board/detail', params: { no: article.no }}">
             {{ article.title }}
           </router-link>
         </td>
         <td>{{ article.writer }}</td>
+<!--        moment 함수를 사용해서 날짜를 포매팅 -->
         <td>{{ moment(article.regDate).format('YYYY-MM-DD') }}</td>
       </tr>
       </tbody>
