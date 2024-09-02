@@ -47,4 +47,5 @@ export default {
     console.log('AUTH PUT: ', data);
     return data;
   }
+
 };
