@@ -66,6 +66,7 @@ load();
     </div>
     <div class="mb-3 mt-3">
       <label class="form-label"> 기존 첨부파일 </label>
+<!--      첨부파일들을 돌면서 이름과 휴지통 아이콘 생성, 휴지통 클릭시 해당 첨부파일 삭제-->
       <div v-for="file in attachments" :key="file.no" class="attach">
         <i class="fa-solid fa-paperclip"></i> {{ file.filename }}
         <i class="fa-solid fa-trash-can text-danger ms-2" @click="removeFile(file.no, file.filename)"></i>
@@ -83,9 +84,11 @@ load();
       <button type="submit" class="btn btn-primary me-3">
         <i class="fa-solid fa-check"></i> 확인
       </button>
+<!--      기존 게시글 데이터 불러오는 버튼-->
       <button type="button" class="btn btn-primary me-3" @click="reset">
         <i class="fa-solid fa-undo"></i> 취소
       </button>
+<!--      상세 페이지로 돌아가는 버튼-->
       <button class="btn btn-primary" @click="back">
         <i class="fa-solid fa-arrow-left"></i> 돌아가기
       </button>

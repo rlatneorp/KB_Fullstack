@@ -77,15 +77,16 @@
         order by filename
     </select>
 
+<!--  board테이블에서 전체 게시글 개수 조회-->
     <select id="getTotalCount" resultType="java.lang.Integer">
         select count(*) from tbl_board
     </select>
 
+<!--  board 테이블에서 offset 인덱스에서 시작해서 amount 만큼 잘라낸 게시물을 no 내림차순으로 조회-->
     <select id="getPage" resultType="BoardVO">
         select * from tbl_board order by no desc
             limit #{offset}, #{amount}
     </select>
-
 
     <resultMap id="attachmentMap" type="org.scoula.board.domain.BoardAttachmentVO">
         <id column="ano" property="no"/>

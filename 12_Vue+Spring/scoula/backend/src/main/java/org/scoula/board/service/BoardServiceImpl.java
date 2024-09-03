@@ -28,9 +28,12 @@ public class BoardServiceImpl implements BoardService {
     private final static String BASE_DIR = "c:/upload/board";
 
     @Override
-    public Page getPage(PageRequest pageRequest) {
+    public Page<BoardDTO>  getPage(PageRequest pageRequest) {
+//        특정 페이지에 해당하는 게시글 목록을 가져옴
         List<BoardVO> boards = mapper.getPage(pageRequest);
+//        전체 게시글 수 가져오기
         int totalCount = mapper.getTotalCount();
+//        BoardVO 리스트 -> BoardDTO 리스트로 변경
         return Page.of(pageRequest, totalCount,
                 boards.stream().map(BoardDTO::of).toList());
     }

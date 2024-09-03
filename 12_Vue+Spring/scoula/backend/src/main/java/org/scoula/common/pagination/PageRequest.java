@@ -15,6 +15,7 @@ public class PageRequest {
         amount = 10;
     }
 
+//    팩토리 메소드를 사용해서 PageRequest 생성자 사용
     public static PageRequest of(int page, int amount) {
         return new PageRequest(page, amount);
     }

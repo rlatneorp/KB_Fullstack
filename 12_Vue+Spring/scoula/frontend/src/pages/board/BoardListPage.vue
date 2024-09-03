@@ -6,7 +6,6 @@ import { useRoute, useRouter } from 'vue-router';
 
 const cr = useRoute();
 const router = useRouter();
-
 const page = ref({ });
 
 // page.value가 바뀌는 동시에 다시 계산된다
