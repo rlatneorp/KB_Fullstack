@@ -22,12 +22,12 @@ import java.util.List;
 public class BoardController {
     private final BoardService service;
 
-    @GetMapping("")
-//    전체 게시글 조회
-    public ResponseEntity<List<BoardDTO>> getList() {
-//        상태 코드가 200이고 body 타입이 List<BoardDTO>인 응답 객체를 리턴
-        return ResponseEntity.ok(service.getList());
-    }
+//    @GetMapping("")
+////    전체 게시글 조회
+//    public ResponseEntity<List<BoardDTO>> getList() {
+////        상태 코드가 200이고 body 타입이 List<BoardDTO>인 응답 객체를 리턴
+//        return ResponseEntity.ok(service.getList());
+//    }
 
     @GetMapping("/{no}")
     public ResponseEntity<BoardDTO> getById(@PathVariable Long no) {

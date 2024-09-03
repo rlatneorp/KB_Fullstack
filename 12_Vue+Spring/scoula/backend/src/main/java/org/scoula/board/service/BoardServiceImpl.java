@@ -28,7 +28,7 @@ public class BoardServiceImpl implements BoardService {
     private final static String BASE_DIR = "c:/upload/board";
 
     @Override
-    public Page<BoardDTO> getPage(PageRequest pageRequest) {
+    public Page getPage(PageRequest pageRequest) {
         List<BoardVO> boards = mapper.getPage(pageRequest);
         int totalCount = mapper.getTotalCount();
         return Page.of(pageRequest, totalCount,

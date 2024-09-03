@@ -33,10 +33,10 @@ watch(cr, async (newValue) => {
   await load(pageRequest);
 });
 
-const load = async () => {
+const load = async (query) => {
   try {
     // API 호출을 통해서 게시판 목록을 가져와서 저장한다
-    page.value = await api.getList();
+    page.value = await api.getList(query);
     console.log(page.value);
   } catch {}
 };

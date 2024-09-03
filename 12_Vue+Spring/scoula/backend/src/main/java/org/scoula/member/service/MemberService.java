@@ -21,4 +21,5 @@ public interface MemberService {
 
     void changePassword(ChangePasswordDTO changePassword);
 
+
 }
