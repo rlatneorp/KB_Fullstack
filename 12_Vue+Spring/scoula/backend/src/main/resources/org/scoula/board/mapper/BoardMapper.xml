@@ -77,6 +77,16 @@
         order by filename
     </select>
 
+    <select id="getTotalCount" resultType="java.lang.Integer">
+        select count(*) from tbl_board
+    </select>
+
+    <select id="getPage" resultType="BoardVO">
+        select * from tbl_board order by no desc
+            limit #{offset}, #{amount}
+    </select>
+
+
     <resultMap id="attachmentMap" type="org.scoula.board.domain.BoardAttachmentVO">
         <id column="ano" property="no"/>
         <result column="bno" property="bno"/>

@@ -2,10 +2,12 @@ package org.scoula.board.mapper;
 
 import org.scoula.board.domain.BoardAttachmentVO;
 import org.scoula.board.domain.BoardVO;
+import org.scoula.common.pagination.PageRequest;
 
 import java.util.List;
 
 public interface BoardMapper {
+
 //    @Select("select * from tbl_board order by no desc")
     public List<BoardVO> getList();
 
@@ -28,5 +30,10 @@ public interface BoardMapper {
 
 //    첨부파일 번호로 해당 파일 삭제
     public int deleteAttachment(Long no);
+
+    int getTotalCount();
+
+    List<BoardVO> getPage(PageRequest pageRequest);
+
 }
 
