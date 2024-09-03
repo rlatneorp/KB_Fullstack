@@ -21,6 +21,11 @@ import java.io.File;
 public class MemberController {
     final MemberService service;
 
+    @GetMapping("/{username}")
+    public ResponseEntity<MemberDTO> get(@PathVariable String username) {
+        return ResponseEntity.ok(service.get(username));
+    }
+
 //    @PathVariable : 경로 상에 username을 변수 처리(이름 일치해야함)
     @GetMapping("/checkusername/{username}") // 경로에 중괄호 있으면 @PathVariable
 //    body리턴 값이라 Boolean 제너릭

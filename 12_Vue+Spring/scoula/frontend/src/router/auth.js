@@ -1,3 +1,5 @@
+import { isAuthenticated } from '@/util/guards';
+
 export default [
   {
     path: '/auth/login',
@@ -13,10 +15,12 @@ export default [
     path: '/auth/profile',
     name: 'profile',
     component: () => import('../pages/auth/ProfilePage.vue'),
+    beforeEnter: isAuthenticated,
   },
   {
     path: '/auth/changepassword',
     name: 'changepassword',
     component: () => import('../pages/auth/ChangePasswordPage.vue'),
+    beforeEnter: isAuthenticated,
   },
 ];

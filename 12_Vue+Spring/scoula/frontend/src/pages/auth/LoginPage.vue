@@ -1,8 +1,9 @@
 <script setup>
 import { computed, reactive, ref } from 'vue';
 import { useAuthStore } from '@/stores/auth';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
+const cr = useRoute();
 const router = useRouter();
 const auth = useAuthStore();
 
@@ -20,8 +21,12 @@ const disableSubmit = computed(() => !(member.username && member.password));
 const login = async () => {
   console.log(member);
   try {
-    await auth.login(member); // 인증 스토어에서 로컬 스토리지에 해당 사용자 정보 저장
-    router.push('/'); // 로그인 성공시 홈 화면으로 이동
+    await auth.login(member);// 인증 스토어에서 로컬 스토리지에 해당 사용자 정보 저장
+    if (cr.query.next) { // 로그인 후 이동할 페이지가 있는 경우
+      router.push({ name: cr.query.next });
+    } else { // 일반 로그인
+      router.push('/');
+    }
   } catch (e) {
     // 로그인 에러
     console.log('에러=======', e);

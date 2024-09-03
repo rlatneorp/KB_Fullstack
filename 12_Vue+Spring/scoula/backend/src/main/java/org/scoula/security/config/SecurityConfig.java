@@ -81,7 +81,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
 //        해당 경로들은 보안 검사 무시
-        web.ignoring().antMatchers("/assets/**","/*","/api/member/**");
+        web.ignoring().antMatchers("/assets/**","/*");
     }
 
     @Override
@@ -112,6 +112,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .anyRequest().authenticated(); // 나머지는 로그인 된 경우 모두 허용
         http.authorizeRequests()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
+                .antMatchers(HttpMethod.GET, "/api/member/*").authenticated()
+                .antMatchers(HttpMethod.PUT, "/api/member/*", "/api/member/*/chagepassword").authenticated()
+                .antMatchers(HttpMethod.POST, "/api/board/**").authenticated()
+                .antMatchers(HttpMethod.PUT, "/api/board/**").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/api/board/**").authenticated()
                 // 일단 모든 접근 허용
                 .anyRequest().permitAll();
     }
