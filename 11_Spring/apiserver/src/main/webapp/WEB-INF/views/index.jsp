@@ -12,7 +12,7 @@
 <body>
     <h1>환영합니다.</h1>
     <sec:authorize access="isAnonymous()">
-        <a href="/security/login">로그인 페이지</a>
+        <a href="/security/login"> 로그인 페이지 </a>
     </sec:authorize>
 
     <sec:authorize access="isAuthenticated()">
